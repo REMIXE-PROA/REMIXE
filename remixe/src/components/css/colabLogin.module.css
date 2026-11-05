@@ -394,3 +394,132 @@
 .footer a:hover {
     text-decoration: underline;
 }
+
+/* ---------- Responsivo ---------- */
+
+/* Tablet */
+@media (max-width: 1024px) {
+    .content {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 32px;
+        padding: 20px;
+    }
+
+    .content > * {
+        min-width: 0;
+    }
+
+    .secaoPrincipal {
+        width: 100%;
+    }
+
+    .tituloPrincipal,
+    .destaqueTitulo,
+    .destaqueTitulo2 {
+        font-size: 40px;
+    }
+
+    .footer {
+        width: 100%;
+    }
+}
+
+/* Celular */
+@media (max-width: 768px) {
+    .content {
+        padding: 16px;
+        gap: 24px;
+    }
+
+    .tituloPrincipal,
+    .destaqueTitulo,
+    .destaqueTitulo2 {
+        font-size: 32px;
+    }
+
+    .subtituloPrincipal,
+    .destaqueSubtitulo {
+        font-size: 17px;
+    }
+
+    .cardsExemplo {
+        padding: 14px;
+    }
+
+    .navExemplo {
+        max-width: 100%;
+        flex-wrap: wrap;
+        border-radius: 20px;
+    }
+
+    .cardMetrica {
+        padding: 18px;
+    }
+
+    .sucessoRetorno {
+        font-size: 18px;
+    }
+
+    .descricaoRetorno {
+        font-size: 16px;
+    }
+
+    .portalTitulo {
+        width: 100%;
+        max-width: 260px;
+    }
+
+    .textoPortal {
+        font-size: 17px;
+    }
+
+    .loginTitulo {
+        font-size: 1.5rem;
+    }
+
+    .grupoFormulario,
+    .formBanco {
+        font-size: 1rem;
+    }
+
+    .formInput,
+    .iconeInput {
+        font-size: 1rem;
+    }
+
+    .acessarPlataforma {
+        font-size: 1.1rem;
+    }
+}
+
+/* Celular pequeno */
+@media (max-width: 480px) {
+    .content {
+        padding: 12px;
+    }
+
+    .tituloPrincipal,
+    .destaqueTitulo,
+    .destaqueTitulo2 {
+        font-size: 28px;
+    }
+
+    .cardLogin {
+        padding: 22px 16px;
+    }
+
+    .loginRapido {
+        grid-template-columns: 1fr;
+    }
+
+    .formBanco,
+    .cardRodape {
+        flex-wrap: wrap;
+        gap: 8px 12px;
+    }
+
+    .retornoPai {
+        flex-wrap: wrap;
+    }
+}

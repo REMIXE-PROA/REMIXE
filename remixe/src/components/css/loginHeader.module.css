@@ -65,3 +65,52 @@
     color: #ffffff;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
 }
+
+/* ---------- Responsivo ---------- */
+
+/* Tablet */
+@media (max-width: 1024px) {
+    .header {
+        padding: 20px 24px;
+    }
+}
+
+/* Celular */
+@media (max-width: 768px) {
+    .header {
+        height: auto;
+        min-height: 60px;
+        padding: 10px 16px;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .headerMarca {
+        gap: 8px;
+    }
+
+    .logo {
+        font-size: 1.1rem;
+    }
+
+    .logoimg {
+        height: 32px;
+    }
+
+    .navHeader a {
+        font-size: 14px;
+        padding: 6px 12px;
+    }
+}
+
+/* Celular pequeno */
+@media (max-width: 480px) {
+    .header {
+        justify-content: center;
+    }
+
+    .navHeader a {
+        font-size: 13px;
+        padding: 6px 10px;
+    }
+}

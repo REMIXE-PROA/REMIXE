@@ -68,3 +68,41 @@
     color: #94a3b8;
     text-decoration: none;
 }
+
+/* ---------- Responsivo ---------- */
+
+/* Tablet */
+@media (max-width: 1024px) {
+    .rodapeInferior {
+        padding: 20px 24px;
+    }
+}
+
+/* Celular */
+@media (max-width: 768px) {
+    .rodapeInferior {
+        padding: 20px 16px;
+    }
+
+    .rodapeConteudo {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+        font-size: 12px;
+    }
+
+    .rodapeLinks {
+        flex-wrap: wrap;
+        gap: 8px 20px;
+        font-size: 12px;
+    }
+
+    .linkLinha1 {
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .linkLinha2 {
+        flex-wrap: wrap;
+    }
+}

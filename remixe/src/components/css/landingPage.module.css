@@ -781,3 +781,173 @@
 .btnPlanSolid:hover {
   background-color: #059669;
 }
+
+/* ---------- Responsivo ---------- */
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .title {
+    font-size: 3rem;
+  }
+
+  .painSection,
+  .transformSection,
+  .resultsSection {
+    padding: 6rem 1.5rem;
+  }
+
+  .plansSection {
+    padding: 6rem 1.5rem 8rem 1.5rem;
+  }
+
+  .cardsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .metricsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .plansGrid {
+    grid-template-columns: 1fr;
+    max-width: 520px;
+    gap: 2.5rem;
+  }
+
+  .planCardHighlighted {
+    transform: none;
+  }
+
+  .planDesc {
+    min-height: 0;
+  }
+}
+
+/* Celular */
+@media (max-width: 768px) {
+  .contentContainer {
+    padding: 5rem 1rem 1.5rem 1rem;
+  }
+
+  .title {
+    font-size: 2.25rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .buttonGroup {
+    flex-direction: column;
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .btnPrimary,
+  .btnSecondary {
+    width: 100%;
+  }
+
+  .bottomContent {
+    margin-top: 2rem;
+  }
+
+  .painSection,
+  .transformSection,
+  .resultsSection {
+    padding: 4rem 1.25rem;
+  }
+
+  .plansSection {
+    padding: 4rem 1.25rem 6rem 1.25rem;
+  }
+
+  .painHeader,
+  .transformHeader,
+  .resultsHeader {
+    margin-bottom: 2.5rem;
+  }
+
+  .plansHeader {
+    margin-bottom: 3rem;
+  }
+
+  .painTitle,
+  .transformTitle,
+  .resultsTitle,
+  .plansTitle {
+    font-size: 1.9rem;
+  }
+
+  .cardsGrid,
+  .transformGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .card,
+  .transformCard {
+    padding: 1.75rem;
+  }
+
+  .mockupContainer {
+    margin-top: 2.5rem;
+  }
+
+  .mockupHeader {
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    padding: 0.75rem 1rem;
+  }
+
+  .mockupUrl {
+    display: none;
+  }
+
+  .mockupBody {
+    flex-direction: column;
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  .mockupCode,
+  .mockupPanel {
+    padding: 1rem;
+  }
+
+  .mockupCode pre {
+    font-size: 0.75rem;
+  }
+}
+
+/* Celular pequeno */
+@media (max-width: 480px) {
+  .title {
+    font-size: 2rem;
+    letter-spacing: -0.02em;
+  }
+
+  .painTitle,
+  .transformTitle,
+  .resultsTitle,
+  .plansTitle {
+    font-size: 1.6rem;
+  }
+
+  .metricsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .metricValueGreen,
+  .metricValueBlue {
+    font-size: 2.5rem;
+  }
+
+  .planCard {
+    padding: 2.5rem 1.5rem;
+  }
+
+  .mockupTabs {
+    flex-wrap: wrap;
+  }
+}

@@ -65,3 +65,73 @@
 
     text-decoration: none;
 }
+
+/* ---------- Responsivo ---------- */
+
+/* Tablet */
+@media (max-width: 1024px) {
+    .header {
+        width: 94%;
+        padding: 0 24px;
+    }
+
+    .brandContainer {
+        width: auto;
+    }
+
+    .navbar {
+        gap: 1.25rem;
+    }
+
+    .navbar a {
+        font-size: 15px;
+    }
+}
+
+/* Celular */
+@media (max-width: 768px) {
+    .header {
+        width: 94%;
+        height: 56px;
+        top: 12px;
+        padding: 0 16px;
+        border-radius: 28px;
+    }
+
+    .brand {
+        font-size: 18px;
+    }
+
+    .navbar {
+        gap: 0.9rem;
+    }
+
+    .navbar a {
+        font-size: 14px;
+    }
+
+    .loginButton {
+        width: auto;
+        padding: 0 8px;
+        font-size: 13px;
+    }
+}
+
+/* Celular pequeno */
+@media (max-width: 480px) {
+    .header {
+        padding: 0 12px;
+    }
+
+    .brand {
+        font-size: 16px;
+    }
+
+    .navbar {
+        gap: 0.6rem;
+    }
+
+    .navbar a {
+        font-size: 12px;
+    }
+}

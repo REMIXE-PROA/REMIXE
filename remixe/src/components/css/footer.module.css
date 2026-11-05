@@ -147,3 +147,90 @@
     color: #475569c3;
 
 }
+
+/* ---------- Responsivo ---------- */
+
+/* Tablet */
+@media (max-width: 1024px) {
+    .footer {
+        width: 94%;
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+
+    .brandContainer {
+        width: auto;
+        gap: 10px;
+    }
+
+    .socialMedia {
+        width: auto;
+        gap: 12px;
+    }
+}
+
+/* Celular */
+@media (max-width: 768px) {
+    .footerContainer {
+        height: auto;
+        padding: 24px 0;
+    }
+
+    .footer {
+        width: 92%;
+        height: auto;
+        padding: 24px 20px;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: 28px;
+    }
+
+    .identity {
+        width: 100%;
+        height: auto;
+        gap: 16px;
+    }
+
+    .socialMedia {
+        width: auto;
+        gap: 12px;
+    }
+
+    .links {
+        width: 100%;
+        height: auto;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        gap: 24px 48px;
+    }
+
+    .plataforma {
+        width: auto;
+        height: auto;
+        gap: 12px;
+    }
+
+    .footerNavbar {
+        height: auto;
+        gap: 10px;
+        padding: 0;
+    }
+
+    .footerNavbar a {
+        font-size: 15px;
+    }
+}
+
+/* Celular pequeno */
+@media (max-width: 480px) {
+    .footer {
+        padding: 20px 16px;
+        border-radius: 16px;
+    }
+
+    .links {
+        flex-direction: column;
+        gap: 20px;
+    }
+}

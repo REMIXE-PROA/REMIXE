@@ -452,3 +452,142 @@
   border: 2px solid #CBD5E1;
   display: inline-block;
 }
+
+/* =========================================
+   RESPONSIVO
+   ========================================= */
+
+/* Setas laterais saem da tela abaixo de 1320px: trazemos para dentro */
+@media (max-width: 1320px) {
+  .sideArrowLeft {
+    left: 8px;
+  }
+
+  .sideArrowRight {
+    right: 8px;
+  }
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .container {
+    padding: 7rem 1.5rem 4rem 1.5rem;
+  }
+
+  .coursesSection {
+    padding: 1.5rem 1.5rem 6rem 1.5rem;
+  }
+
+  .coursesGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .contentColumn {
+    padding: 2.5rem 2rem;
+  }
+
+  .modalityGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Card principal empilha: imagem em cima, conteúdo embaixo */
+@media (max-width: 900px) {
+  .mainCard {
+    grid-template-columns: 1fr;
+  }
+
+  .imageColumn {
+    min-height: 220px;
+    height: 260px;
+  }
+}
+
+/* Celular */
+@media (max-width: 768px) {
+  .container {
+    padding: 6.5rem 1rem 3rem 1rem;
+  }
+
+  .mainCard {
+    border-radius: 20px;
+  }
+
+  .contentColumn {
+    padding: 1.75rem 1.5rem;
+  }
+
+  .courseTitle {
+    font-size: 1.75rem;
+  }
+
+  .moduleTag,
+  .progressContainer,
+  .modalitySection {
+    margin-bottom: 1.5rem;
+  }
+
+  .actionRow {
+    justify-content: stretch;
+  }
+
+  .btnContinue {
+    width: 100%;
+  }
+
+  .coursesSection {
+    padding: 1.5rem 1rem 5rem 1rem;
+  }
+
+  .coursesHeader {
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .sectionTitle {
+    font-size: 1.4rem;
+  }
+
+  .coursesGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .cardImageContainer {
+    height: 200px;
+  }
+
+  .sideArrowLeft,
+  .sideArrowRight {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+/* Celular pequeno */
+@media (max-width: 480px) {
+  .container {
+    padding: 6rem 0.75rem 2.5rem 0.75rem;
+  }
+
+  .imageColumn {
+    min-height: 180px;
+    height: 200px;
+  }
+
+  .contentColumn {
+    padding: 1.5rem 1.25rem;
+  }
+
+  .courseTitle {
+    font-size: 1.5rem;
+  }
+
+  .modalityGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .cardContent {
+    padding: 1.25rem;
+  }
+}
