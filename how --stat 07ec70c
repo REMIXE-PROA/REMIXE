@@ -1,0 +1,13 @@
+[33mcommit 5a82c311900275346c6856bfded00dc57acdbd00[m
+Author: Renan-SK <renanferreira783@gmail.com>
+Date:   Wed Nov 11 17:32:07 2026 -0300
+
+    Adição do quiz
+    
+    Adição do quiz
+
+ remixe/src/App.jsx                          |   2 [32m+[m
+ remixe/src/components/css/modulo.module.css |   2 [32m+[m[31m-[m
+ remixe/src/components/css/quiz.module.css   | 123 [32m++++++++[m
+ remixe/src/components/quiz.jsx              | 464 [32m++++++++++++++++++++++++++++[m
+ 4 files changed, 590 insertions(+), 1 deletion(-)
