@@ -287,110 +287,31 @@ async function API(event){
         try {
 
         const resposta = await fetch(
-            "https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash-preview:generateContent",
-            {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                    "X-goog-api-key": "Chave aqui!"
-                },
-                body: JSON.stringify({
-                    contents: [
-                        {
-                            parts: [
-                                {
-                                    text: `Você é um gerador de questões educacionais para uma plataforma de estudos.
+    "http://localhost:3001/api/gerar-questao",
+    {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            conteudo: inputEnviar.value,
+            numero: numero
+        })
+    }
+)
 
-Sua tarefa é receber um conteúdo ou tema informado pelo usuário e criar uma questão de múltipla escolha para testar o conhecimento sobre esse assunto.
+const objeto = await resposta.json()
 
-REGRAS PARA CRIAR A QUESTÃO:
-
-Crie uma pergunta objetiva e coerente com o conteúdo informado.
-
-Gere exatamente quatro alternativas.
-
-As alternativas devem ser identificadas pelas letras A, B, C e D.
-
-Somente uma alternativa pode estar correta.
-
-As três alternativas incorretas devem ser plausíveis, mas conter informações erradas.
-
-Evite alternativas muito óbvias ou absurdas.
-
-Não crie alternativas repetidas.
-
-Utilize uma linguagem clara e adequada ao nível do conteúdo apresentado.
-
-Não forneça explicações antes ou depois do JSON.
-
-DISTRIBUIÇÃO DA RESPOSTA CORRETA:
-
-O usuário informará um número entre 1 e 4, que representa a posição da alternativa correta:
-
-1 = Alternativa A correta.
-
-2 = Alternativa B correta.
-
-3 = Alternativa C correta.
-
-4 = Alternativa D correta.
-
-Respeite obrigatoriamente essa posição. Não altere a posição indicada.
-
-FORMATO DE RESPOSTA:
-
-Retorne exclusivamente um objeto JSON válido, seguindo exatamente esta estrutura:
-
-{
-"comando": "Enunciado da questão",
-"alternativa1": "Texto da alternativa A",
-"alternativa2": "Texto da alternativa B",
-"alternativa3": "Texto da alternativa C",
-"alternativa4": "Texto da alternativa D"
+if (!resposta.ok) {
+    console.log("Erro:", objeto)
+    return
 }
 
-IMPORTANTE:
-
-Não utilize Markdown.
-
-Não coloque o JSON dentro de blocos de código.
-
-Não adicione comentários.
-
-Não adicione campos extras.
-
-Não coloque a resposta correta em nenhum campo adicional.
-
-Garanta que a alternativa correta corresponda ao número solicitado.
-
-CONTEÚDO DO USUÁRIO: ${inputEnviar.value}
-
-NÚMERO DA ALTERNATIVA CORRETA: ${numero}`
-                                }
-                            ]
-                        }
-                    ]
-                })
-            }
-        )
-
-        const dados = await resposta.json()
-
-        if (!resposta.ok) {
-            console.log("Erro na API:", dados)
-            return
-        }
-
-        console.log(dados.candidates[0].content.parts[0].text)
-        let objeto = JSON.parse(dados.candidates[0].content.parts[0].text)
-
-        console.log(objeto)
-        
-        comando.textContent = objeto.comando
-        alternativa1.textContent = objeto.alternativa1
-        alternativa2.textContent = objeto.alternativa2
-        alternativa3.textContent = objeto.alternativa3
-        alternativa4.textContent = objeto.alternativa4
+comando.textContent = objeto.comando
+alternativa1.textContent = objeto.alternativa1
+alternativa2.textContent = objeto.alternativa2
+alternativa3.textContent = objeto.alternativa3
+alternativa4.textContent = objeto.alternativa4
 
 
     } catch (erro) {
