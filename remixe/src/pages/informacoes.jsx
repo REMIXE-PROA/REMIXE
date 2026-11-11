@@ -1,16 +1,16 @@
 import Styles from '../components/css/informacoes.module.css'
 import Header from '../components/header'
 import Footer from '../components/footer'
-import Seta from '../assets/seta.png'
+import Seta from '../assets/seta.svg'
 import { Link } from 'react-router-dom'
 
 function Informacoes(){
     return(
         <div className={Styles.fundao}>
+                <Header />
             <div className={Styles.fundo}>
-                <div className={Styles.header_separacao}>
-                    <Header />
-                </div>       
+                
+                       
                 <div className={Styles.conteudo}>
                     <div className={Styles.titulo_curso}>
                         <p>Cursos</p>
@@ -77,14 +77,13 @@ function Informacoes(){
                                     Imagem de Capa
                                 </p>
                             </div>
-                            <div className={Styles.linha_fina}></div>
                             <div className={Styles.foto}></div>
                         </div>
                     </div>
                     <div className={Styles.finalizacao}>
                         <div className={Styles.ajuste}>
                              <Link to="/creator" className={Styles.botao_voltar}>Voltar para a página anterior</Link>
-                             <Link to="/Modulo" className={Styles.botao_avancar}>Avançar ➔</Link>
+                             <Link to="/Modulo" className={Styles.botao_avancar}>Avançar</Link>
                         </div>
                     </div>
                 </div>

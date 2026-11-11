@@ -19,7 +19,6 @@ function Header() {
 
             <button className={Style.loginButton}><Link to="/Login-collab">Login</Link></button>
 
-
         </header>
     )}
 

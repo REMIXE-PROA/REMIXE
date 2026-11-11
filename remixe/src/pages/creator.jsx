@@ -19,8 +19,6 @@ function Creator() {
       <Header/>
       <section className={Style.heroBox}>
         <div className={Style.heroText}>
-          <span className={Style.heroBadge}>PAINEL DE GESTÃO EDUCACIONAL • REMIXE</span>
-
           <div className={Style.heroWelcome}>
             <span className={Style.heroMessage}>OLÁ, RENAN!</span>
             <h1 className={Style.welcomeMessage}>Bem-vindo de volta!</h1>

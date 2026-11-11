@@ -1,287 +1,511 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@100..900&family=Plus+Jakarta+Sans:wght@200..800&display=swap');
 
+/* ---------- Base ---------- */
 .texto_preto{
     color: black;
 }
 
 .fundao{
+    --fonte-texto: 'Plus Jakarta Sans', 'Inter', sans-serif;
+    --fonte-titulo: 'Outfit', 'Plus Jakarta Sans', sans-serif;
+    --verde: #10B981;
+    --borda: #E2E8F0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    min-height: 100vh;
+    min-height: 100dvh;
     background-color: #F1F5F9;
     color: #64748B;
+    font-family: var(--fonte-texto);
     font-size: 16px;
     font-weight: 600;
 }
 
-.fundao .fundo{
+.fundao :is(input, button, textarea, select){
+    font-family: inherit;
+}
+
+.fundo{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    align-self: center;
     width: 90%;
-    height: 100%;
-    margin: auto;
-}
-
-.fundao .fundo .header_separacao{
-    width: 100%;
-    height: 110px;
-}
-
-.fundao .conteudo .titulo_curso{
-    width: 10.5%;
-    margin-left: 0.3%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-}
-
-.fundao .conteudo .titulo_curso .seta{
-    width: 10%;
-}
-
-.fundao .fundo .conteudo .etapas{
-    width: 100%;
-    height: 100px;
-    border: 1px solid #E2E8F0;
-    border-radius: 15px;
-    margin-top: 1.2%;
-    background-color: white;
-    display: flex;
-}
-
-.fundao .fundo .conteudo .etapas .etapas_ajuste{
-    width: 70%;
-    height: 40%;
-    margin: auto;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-}
-
-.fundao .fundo .conteudo .etapas .etapas_ajuste .circulo{
-    width: 3.4%;
-    height: 100%;
-    border: 1px solid black;
-    background-color: #F1F5F9;
-    border-radius: 100%;
-    padding-top: 0.7%;
-    padding-left: 1.19%;
-}
-
-.fundao .fundo .conteudo .etapas .etapas_ajuste .circulo_verde{
-    width: 3.4%;
-    height: 100%;
-    background-color: #10B981;
-    border: 1px solid black;
-    border-radius: 100%;
-    color: white;
-    padding-top: 0.7%;
-    padding-left: 1.25%;
-}
-
-.fundao .fundo .conteudo .etapas .etapas_ajuste .linha1{
-    width: 30%;
-    height: 2px;
-    margin-top: 1.55%;
-    background-color: #10B981;
-}
-
-.fundao .fundo .conteudo .etapas .etapas_ajuste .linha2{
-    width: 30%;
-    height: 2px;
-    margin-top: 1.55%;
-    background-color: black;
-}
-
-.fundao .fundo .conteudo .etapas .etapas_ajuste p{
-    margin-top: 0.7%;
-}
-
-.fundao .fundo .conteudo .dados_curso{
-    width: 100%;
-    height: 620px;
-    border: 1px solid #E2E8F0;
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
-    margin-top: 2%;
-    background-color: #FFFFFF;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-}
-
-.fundao .fundo .conteudo .dados_curso .dados_caixa1{
-    width: 55%;
-    height: 100%;
-    display: flex;
-}
-
-.fundao .fundo .conteudo .dados_curso .dados_caixa1 .ajuste_caixa1{
-    width: 90%;
-    height: 90%;
-    margin: auto;
-}
-
-.fundao .fundo .conteudo .dados_curso .dados_caixa1 .ajuste_caixa1 .input_subdescricao{
-    width: 100%;
-    height: 10%;
-    border: 1px solid #CBD5E1;
-    border-radius: 15px;
-    margin-top: 2%;
-    margin-bottom: 2%;
-    padding-left: 1%;
-}
-
-.fundao .fundo .conteudo .dados_curso .dados_caixa1 .ajuste_caixa1 .input_subdescricao:focus{
-    outline: none;
-    border-color: #10B981;
-}
-
-.fundao .fundo .conteudo .dados_curso .dados_caixa1 .ajuste_caixa1 .editor {
-    width: 100%;
-    border-radius: 15px;
-    border: 1px solid #CBD5E1;
-    overflow: hidden;
-    background-color: #FFFFFF;
     box-sizing: border-box;
-    margin-top: 2%;
+    padding: 24px 0 40px;
 }
 
-.fundao .fundo .conteudo .dados_curso .dados_caixa1 .ajuste_caixa1 .barra_ferramentas {
-    height: 64px;
+.conteudo{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.titulo_curso{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 12px;
+    padding-left: 4px;
+}
+
+.titulo_curso :is(h1, h2, h3, p){
+    margin: 0;
+    font-family: var(--fonte-titulo);
+}
+
+.titulo_curso .seta{
     display: flex;
     align-items: center;
-    gap: 18px;
-    padding: 0 24px;
-    background-color: #F8FAFC;
-    border-bottom: 1px solid #CBD5E1;
+    flex: none;
+    width: auto;
+    max-height: 24px;
 }
 
+/* ---------- Etapas ---------- */
+.etapas{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 100px;
+    box-sizing: border-box;
+    margin-top: 16px;
+    border: 1px solid var(--borda);
+    border-radius: 15px;
+    background-color: white;
+}
 
-.fundao .fundo .conteudo .dados_curso .dados_caixa1 .ajuste_caixa1 .barra_ferramentas button {
+.etapas_ajuste{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    width: 70%;
+}
+
+.etapas_ajuste .circulo,
+.etapas_ajuste .circulo_verde{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: none;
+    width: 40px;
+    height: 40px;
+    box-sizing: border-box;
+    padding: 0;
+    border: 1px solid black;
+    border-radius: 50%;
+    font-size: 16px;
+    line-height: 1;
+}
+
+.etapas_ajuste .circulo{
+    background-color: #F1F5F9;
+}
+
+.etapas_ajuste .circulo_verde{
+    background-color: var(--verde);
+    color: white;
+}
+
+.etapas_ajuste .linha1,
+.etapas_ajuste .linha2{
+    flex: 1;
+    min-width: 8px;
+    height: 2px;
+}
+
+.etapas_ajuste .linha1{ background-color: #10B981; }
+.etapas_ajuste .linha2{ background-color: black; }
+
+.etapas_ajuste p{
+    flex: none;
+    margin: 0;
+    white-space: nowrap;
+}
+
+/* ---------- Informações ---------- */
+.dados_curso{
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: space-between;
+    gap: 32px;
+    width: 100%;
+    min-height: 620px;
+    box-sizing: border-box;
+    padding: 24px;
+    margin-top: 16px;
+    border: 1px solid var(--borda);
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    background-color: #FFFFFF;
+}
+
+.dados_caixa1{
+    display: flex;
+    flex-direction: column;
+    flex: 55 1 0;
+    min-width: 0;
+}
+
+.ajuste_caixa1{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+}
+
+.ajuste_caixa1 p{
+    margin: 12px 0 0;
+}
+
+.ajuste_caixa1 p:first-child{
+    margin-top: 0;
+}
+
+.input_subdescricao{
+    width: 100%;
+    height: 52px;
+    box-sizing: border-box;
+    padding: 0 16px;
+    border: 1px solid #CBD5E1;
+    border-radius: 15px;
+}
+
+.input_subdescricao:focus{
+    outline: none;
+    border-color: var(--verde);
+}
+
+.editor{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+    border: 1px solid #CBD5E1;
+    border-radius: 15px;
+    background-color: #FFFFFF;
+}
+
+.editor:focus-within{
+    border-color: var(--verde);
+}
+
+.barra_ferramentas{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 18px;
+    min-height: 64px;
+    box-sizing: border-box;
+    padding: 8px 24px;
+    border-bottom: 1px solid #CBD5E1;
+    background-color: #F8FAFC;
+}
+
+.barra_ferramentas button{
+    padding: 5px;
     border: none;
     background: transparent;
     color: #64748B;
-    font-family: inherit;
     cursor: pointer;
-    padding: 5px;
 }
 
-.fundao .fundo .conteudo .dados_curso .dados_caixa1 .ajuste_caixa1 .barra_ferramentas button:hover {
-    color: #10B981;
+.barra_ferramentas button:hover{
+    color: var(--verde);
 }
 
-.fundao .fundo .conteudo .dados_curso .dados_caixa1 .ajuste_caixa1 .divisor {
-    height: 24px;
+.divisor{
+    flex: none;
     width: 1px;
+    height: 24px;
     background-color: #CBD5E1;
 }
 
-.fundao .fundo .conteudo .dados_curso .dados_caixa1 .ajuste_caixa1 .editor textarea {
-    display: block;
+.editor textarea{
+    flex: 1;
     width: 100%;
-    height: 235px;
+    min-height: 235px;
     box-sizing: border-box;
+    padding: 16px;
+    border: none;
     outline: none;
     resize: vertical;
-    font-family: inherit;
     line-height: 1.4;
     color: #334155;
-    padding: 1%;
-    
 }
 
-.fundao .fundo .conteudo .dados_curso .dados_caixa1 .ajuste_caixa1.editor textarea::placeholder {
+.editor textarea::placeholder{
     color: #94A3B8;
     opacity: 1;
 }
 
-.fundao .fundo .conteudo .dados_curso .dados_caixa1 .ajuste_caixa1.editor textarea:focus {
-    border-color: #10B981;
-}
-
-.fundao .fundo .conteudo .dados_curso .dados_caixa2{
-    width: 45%;
-    height: 90%;
-    margin: auto;
+.dados_caixa2{
     display: flex;
     flex-direction: column;
+    gap: 12px;
+    flex: 45 1 0;
+    min-width: 0;
 }
 
-.fundao .fundo .conteudo .dados_curso .dados_caixa2 .titulo_caixa2{
-    width: 25%;
-    height: 6%;
+.titulo_caixa2{
     display: flex;
+    align-items: center;
+    gap: 12px;
 }
 
-.fundao .fundo .conteudo .dados_curso .dados_caixa2 .titulo_caixa2 .verde_caixa2{
-    width: 6%;
-    height: 30px;
-    border-radius: 15px;
-    background-color: #10B981;
+.titulo_caixa2 .verde_caixa2{
+    flex: none;
+    width: 8px;
+    height: 28px;
+    border-radius: 8px;
+    background-color: var(--verde);
 }
 
-.fundao .fundo .conteudo .dados_curso .dados_caixa2 .titulo_caixa2 p{
+.titulo_caixa2 p{
+    margin: 0;
+    font-family: var(--fonte-titulo);
     font-size: 20px;
-    margin-left: 8%;
-    margin-top: 1.5%;
     color: black;
 }
 
-.fundao .fundo .conteudo .dados_curso .dados_caixa2 .linha_fina{
-   width: 95%;
-   height: 0.2px;
-   border: 1px solid #f3f8ff;
-   margin-top: 1%;
-}
-
-.fundao .fundo .conteudo .dados_curso .dados_caixa2 .foto{
-   width: 95%;
-   height: 95%;
-   background-color: #c2f5e4;
-   border-radius: 15px;
-   margin-top: 3%;
-}
-
-.fundao .fundo .conteudo .finalizacao{
+.linha_fina{
+    flex: none;
     width: 100%;
-    height: 90px;
-    border: 1px solid #E2E8F0;
+    height: 1px;
+    background-color: var(--borda);
+}
+
+.foto{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    width: 100%;
+    min-height: 260px;
+    overflow: hidden;
+    border-radius: 15px;
+    background-color: #c2f5e4;
+}
+
+.foto img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ---------- Rodapé (voltar / avançar) ---------- */
+.finalizacao{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    min-height: 90px;
+    box-sizing: border-box;
+    border: 1px solid var(--borda);
     border-end-end-radius: 15px;
     border-end-start-radius: 15px;
-    display: flex;
     background-color: #F9FBFD;
 }
 
-.fundao .fundo .conteudo .finalizacao .ajuste{
-    width: 95%;
-    height: 60%;
-    margin: auto;
+.finalizacao .ajuste{
     display: flex;
     flex-direction: row;
+    align-items: center;
     justify-content: space-between;
-    
-
+    gap: 16px;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 16px 24px;
 }
 
-.fundao .fundo .conteudo .finalizacao .ajuste .botao_voltar{
-    width: 15%;
-    height: 75%;
-    margin: auto 0;
-    border: 1px solid #E2E8F0;
+.botao_voltar,
+.botao_avancar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    padding: 12px 28px;
     border-radius: 15px;
     text-decoration: none;
-    display: inline-block;
-    padding-top: 0.5%;
-    padding-left: 0.5%;
-    color: black;
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+.botao_voltar{
+    border: 1px solid var(--borda);
     background-color: white;
-    
+    color: black;
 }
 
-.fundao .fundo .conteudo .finalizacao .ajuste .botao_avancar{
-    width: 8%;
-    height: 90%;
-    margin: auto 0;
-    border-radius: 15px;
-    text-decoration: none;
-    display: inline-block;
-    padding-top: 0.8%;
-    padding-left: 1.6%;
+.botao_avancar{
+    border: none;
+    background-color: var(--verde);
     color: white;
-    background-color: #10B981;
+}
+
+/* ---------- Responsivo ---------- */
+
+/* Tablet */
+@media (max-width: 1024px) {
+    .fundo{
+        width: 94%;
+    }
+
+    .etapas_ajuste{
+        width: 90%;
+    }
+}
+
+/* Tablet retrato */
+@media (max-width: 900px) {
+    .dados_curso{
+        flex-direction: column;
+        min-height: 0;
+        padding: 16px;
+        gap: 20px;
+    }
+
+    .dados_caixa1,
+    .dados_caixa2{
+        flex: none;
+    }
+
+    .input_subdescricao{
+        height: 48px;
+    }
+
+    .barra_ferramentas{
+        min-height: 56px;
+        gap: 10px;
+        padding: 10px 16px;
+    }
+
+    .editor textarea{
+        min-height: 200px;
+    }
+
+    .foto{
+        flex: none;
+        height: 220px;
+        min-height: 0;
+    }
+}
+
+/* Celular */
+@media (max-width: 768px) {
+    .etapas{
+        min-height: 0;
+        padding: 16px 0;
+        border-radius: 12px;
+    }
+
+    .etapas_ajuste{
+        width: 92%;
+        gap: 8px;
+    }
+
+    .etapas_ajuste .circulo,
+    .etapas_ajuste .circulo_verde{
+        width: 32px;
+        height: 32px;
+        font-size: 14px;
+    }
+
+    .etapas_ajuste p{
+        font-size: 12px;
+    }
+
+    .finalizacao .ajuste{
+        padding: 16px;
+        gap: 12px;
+    }
+
+    .botao_voltar,
+    .botao_avancar{
+        flex: 1;
+        padding: 12px 16px;
+    }
+}
+
+/* Celular pequeno */
+@media (max-width: 480px) {
+    .fundao{
+        font-size: 14px;
+    }
+
+    .fundo{
+        width: 96%;
+    }
+
+    .etapas{
+        padding: 12px 0;
+    }
+
+    .etapas_ajuste{
+        width: 94%;
+        gap: 6px;
+    }
+
+    .etapas_ajuste .circulo,
+    .etapas_ajuste .circulo_verde{
+        width: 28px;
+        height: 28px;
+        font-size: 12px;
+    }
+
+    .etapas_ajuste p{
+        font-size: 11px;
+    }
+
+    .finalizacao .ajuste{
+        flex-direction: column-reverse;
+    }
+
+    .botao_voltar,
+    .botao_avancar{
+        flex: none;
+        width: 100%;
+    }
+
+    .dados_curso{
+        padding: 12px;
+    }
+
+    .input_subdescricao{
+        height: 44px;
+        border-radius: 12px;
+    }
+
+    .barra_ferramentas{
+        gap: 6px;
+        padding: 8px 10px;
+    }
+
+    .editor textarea{
+        min-height: 160px;
+        padding: 10px;
+    }
+
+    .titulo_caixa2 p{
+        font-size: 16px;
+    }
+
+    .foto{
+        height: 180px;
+    }
+}
+
+/* Telas muito estreitas: só os números das etapas */
+@media (max-width: 400px) {
+    .etapas_ajuste p{
+        display: none;
+    }
 }

@@ -14,7 +14,7 @@ function SelecaoCurso() {
   const [modalidade, setModalidade] = useState('revisao');
 
   return (
-    <main className={styles.pageWrapper}>
+    <div className={styles.pageWrapper}>
       <Header />
 
       <section className={styles.container}>
@@ -285,7 +285,7 @@ function SelecaoCurso() {
       </section>
 
       <Footer />
-    </main>
+    </div>
   );
 }
 

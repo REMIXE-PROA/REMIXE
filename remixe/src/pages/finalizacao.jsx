@@ -1,22 +1,17 @@
 import Styles from '../components/css/finalizacao.module.css'
 import Header from '../components/header'
 import Footer from '../components/footer'
-import Seta from '../assets/seta.png'
-import barras from '../assets/barras.svg'
-import documento from '../assets/documento.svg'
-import foto from '../assets/foto.svg'
-import seta_youtube from '../assets/seta_youtube.svg'
-import yes from '../assets/yes.svg'
+import Seta from '../assets/seta.svg'
+import Check from '../assets/check.svg'
+import X from '../assets/x.svg'
 import { Link } from 'react-router-dom'
 
 
 function Finalizacao(){
     return(
         <div className={Styles.fundao}>
+            <Header /> 
              <div className={Styles.fundo}>
-                <div className={Styles.header_separacao}>
-                    <Header />
-                </div>       
                 <div className={Styles.conteudo}>
                     <div className={Styles.titulo_curso}>
                         <p>Cursos</p>
@@ -67,11 +62,12 @@ function Finalizacao(){
 
                                 <div className={Styles.selecionar}>
                                     <p>Salvar progresso automaticamente</p>
-                                        <label className={Styles.botao_selecionar}>
+                                    <label className={Styles.botao_selecionar}>
                                             <input type="checkbox" defaultChecked />
                                             <span className={Styles.slider}>
-                                            <span className={Styles.check}>✓</span>
-                                        </span>
+                                                <img className={Styles.check} src={Check} alt="" />
+                                                <img className={Styles.x} src={X} alt="" />
+                                            </span>
                                     </label>
                                 </div>
                                 <div className={Styles.selecionar}>
@@ -79,9 +75,10 @@ function Finalizacao(){
                                         <label className={Styles.botao_selecionar}>
                                             <input type="checkbox" defaultChecked />
                                             <span className={Styles.slider}>
-                                            <span className={Styles.check}>✓</span>
-                                        </span>
-                                    </label>
+                                                <img className={Styles.check} src={Check} alt="" />
+                                                <img className={Styles.x} src={X} alt="" />
+                                            </span>
+                                        </label>
                                 </div>
 
                                 <div className={Styles.linha}></div>
@@ -96,9 +93,10 @@ function Finalizacao(){
                                         <label className={Styles.botao_selecionar}>
                                             <input type="checkbox" defaultChecked />
                                             <span className={Styles.slider}>
-                                            <span className={Styles.check}>✓</span>
-                                        </span>
-                                    </label>
+                                                <img className={Styles.check} src={Check} alt="" />
+                                                <img className={Styles.x} src={X} alt="" />
+                                            </span>
+                                        </label>
                                 </div>
 
                                 <p className={Styles.ajuste_p}>Nota minima de aprovação</p>

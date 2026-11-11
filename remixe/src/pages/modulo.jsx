@@ -1,7 +1,7 @@
 import Styles from '../components/css/modulo.module.css'
 import Header from '../components/header'
 import Footer from '../components/footer'
-import Seta from '../assets/seta.png'
+import Seta from '../assets/seta.svg'
 import { Link } from 'react-router-dom'
 
 
@@ -116,14 +116,12 @@ function inserir_modulo(){
 function Modulo(){
     return(
         <div className={Styles.fundao}>
-            <div className={Styles.fundo}>
-                <div className={Styles.header_separacao}>
-                    <Header />
-                </div>       
+            <Header /> 
+            <div className={Styles.fundo}>  
                 <div className={Styles.conteudo}>
                     <div className={Styles.titulo_curso}>
                         <p>Cursos</p>
-                        <img className={Styles.seta} src={Seta} alt="" />
+                        <img className={Styles.setao} src={Seta} alt="" />
                         <p className={Styles.texto_preto}>Novo Curso</p>
 
                     </div>

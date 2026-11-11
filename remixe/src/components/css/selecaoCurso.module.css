@@ -6,13 +6,13 @@
   background-color: #F8FAFC;
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 .container {
   width: 100%;
   max-width: 1200px;
-  margin: 0 auto;
-  padding: 8rem 2rem 6rem 2rem;
+  margin: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -471,7 +471,8 @@
 /* Tablet */
 @media (max-width: 1024px) {
   .container {
-    padding: 7rem 1.5rem 4rem 1.5rem;
+    padding: 2rem 1.5rem 4rem 1.5rem;
+    margin: 1px;
   }
 
   .coursesSection {
@@ -506,7 +507,7 @@
 /* Celular */
 @media (max-width: 768px) {
   .container {
-    padding: 6.5rem 1rem 3rem 1rem;
+    padding: 2rem 1rem 3rem 1rem;
   }
 
   .mainCard {
@@ -567,7 +568,7 @@
 /* Celular pequeno */
 @media (max-width: 480px) {
   .container {
-    padding: 6rem 0.75rem 2.5rem 0.75rem;
+    padding: 2rem 0.75rem 2.5rem 0.75rem;
   }
 
   .imageColumn {
