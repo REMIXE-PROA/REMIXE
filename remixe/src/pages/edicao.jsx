@@ -1,7 +1,7 @@
 import Styles from '../components/css/edicao.module.css'
 import Header from '../components/header'
 import Footer from '../components/footer'
-import Seta from '../assets/seta.png'
+import Seta from '../assets/seta.svg'
 import barras from '../assets/barras.svg'
 import documento from '../assets/documento.svg'
 import foto from '../assets/foto.svg'
@@ -12,10 +12,8 @@ import { Link } from 'react-router-dom'
 function Edicao(){
     return(
         <div className={Styles.fundao}>
-             <div className={Styles.fundo}>
-                <div className={Styles.header_separacao}>
-                    <Header />
-                </div>       
+            <Header /> 
+             <div className={Styles.fundo}>    
                 <div className={Styles.conteudo}>
                     <div className={Styles.titulo_curso}>
                         <p>Cursos</p>

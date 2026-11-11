@@ -30,62 +30,13 @@ function ColabLogin() {
                         </span>
                         </p>
                     </div>
-
-                    <section className={Style.cardsExemplo}>
-                        <div className={Style.navExemplo}>
-                        <button type="button" className={Style.navitemAtivo}>PDF</button>
-                        <button type="button" className={Style.navItem}>Vídeo Gerativo</button>
-                        <button type="button" className={Style.navItem}>Slides Interativos</button>
-                        <button type="button" className={Style.navItem}>Gamificação</button>
-                        </div>
-                
-                        <div className={Style.cardMetrica}>
-                        <p className={Style.metricaValidacao}>SEQUÊNCIA ATUAL</p>
-                        <p className={Style.valorMetrica}>94.8%</p>
-                        <p className={Style.descricaoMetrica}>Índice de Retenção Ativa</p>
-                        </div>
-                
-                        <div className={Style.retornoPai}>
-                        <div className={Style.imgIA}>
-                            <img src={background} alt="Símbolo de IA" />
-                        </div>
-                        <div className={Style.retornoFilho}>
-                            <p className={Style.retornoSucesso}>Módulo Re-mixado com Sucesso!</p>
-                            <p className={Style.descricaoRetorno}>1 hora de vídeo-aula → Manual de 30 páginas</p>
-                        </div>
-                        </div>
-                    </section>
                 </section>
-            
-                
-                
-            
-                
                 <section className={Style.secaoLogin}>
                     <div className={Style.cardLogin}>
-            
-                    <div className={Style.portalTitulo}>
-                        <img className={Style.iconePortal} src={iconePortal} alt="" />
-                        <p className={Style.textoPortal}>Portal do Colaborador</p>
-                    </div>
-            
                     <h1 className={Style.loginTitulo}>Acesse sua conta</h1>
                     <p className={Style.loginSubtitulo}>
                         Entre com seu e-mail corporativo ou credenciais da sua organização.
                     </p>
-            
-                    <div className={Style.loginRapido}>
-                        <button type="button" className={Style.googleLogin}>
-                        <span aria-hidden="true">G</span> Google Workspace
-                        </button>
-                        <button type="button" className={Style.azureLogin}>
-                        Azure AD / Okta
-                        </button>
-                    </div>
-            
-                    <div className={Style.loginAdicional}>
-                        <span>OU CONTINUE COM E-MAIL CORPORATIVO</span>
-                    </div>
             
                     {/* onSubmit evita recarregar a página; troque pela autenticação depois */}
                     <form onSubmit={(e) => e.preventDefault()}>
@@ -95,9 +46,9 @@ function ColabLogin() {
                         </label>
                         <div className={Style.formularioInput}>
                             <input
+                            className={Style.inputEmail}
                             id="email"
                             type="email"
-                            className={Style.formInput}
                             placeholder="nome@suaempresa.com.br"
                             autoComplete="email"
                             required
@@ -111,9 +62,9 @@ function ColabLogin() {
                         </label>
                         <div className={Style.formularioInput}>
                             <input
+                            className={Style.inputSenha}
                             id="senha"
                             type="password"
-                            className={Style.formInput}
                             placeholder="••••••••"
                             autoComplete="current-password"
                             required
@@ -122,17 +73,14 @@ function ColabLogin() {
                         </div>
             
                         <div className={Style.formBanco}>
-                        <label className={Style.formMemoria}>
-                            <input type="checkbox" /> Lembrar neste dispositivo corporativo
-                        </label>
                         <Link to="/recuperar-senha" className={Style.senhaEsquecida}>
                             Esqueceu a senha?
                         </Link>
                         </div>
             
-                         <Link to="/selecaoCurso" >
+                        <Link to="/selecaoCurso" >
                         <button type="submit" className={Style.acessarPlataforma}>
-                            Acessar Plataforma &rarr;
+                            Acessar Plataforma
                         </button>
                         </Link>
                     </form>

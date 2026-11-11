@@ -6,19 +6,26 @@ import Footer from '../components/footer.jsx';
 
 function LandingPage() {
   return (
-    <main style={{ position: 'relative', width: '100%', minHeight: '100vh' }}>
-      <Header />
+    <div className={styles.LandingPageContainer} style={{ position: 'relative', width: '100%', minHeight: '100vh' }}>
+      <div className={styles.headerWrapper}>
+        
+      </div>
 
     <section 
       className={styles.heroSection} 
       style={{ backgroundImage: `url(${remixAiImg})` }}
     >
+
+      
+      
       {/* Camada escura para garantir a leitura perfeita de todos os textos */}
       <div className={styles.overlay}></div>
 
       {/* Container principal que fica por cima do fundo */}
       <div className={styles.contentContainer}>
         
+        <Header />
+
         {/* Textos da parte de cima */}
         <div className={styles.topContent}>
           
@@ -337,7 +344,7 @@ function LandingPage() {
         </div>
       </section>
     <Footer />
-    </main>
+    </div>
   );
 }
 

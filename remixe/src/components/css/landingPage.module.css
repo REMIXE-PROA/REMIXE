@@ -1,3 +1,13 @@
+.headerWrapper {
+  position: absolute;
+  top: 20px;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  z-index: 100; /* acima do overlay (1) e do conteúdo (2) */
+}
+
 .heroSection {
   position: relative;
   display: flex;
@@ -30,9 +40,8 @@
   align-items: center;
   justify-content: space-between;
   height: 100%;
-  min-height: 85vh;
+  min-height: 140vh;
   width: 100%;
-  padding: 6rem 1rem 2rem 1rem;
 }
 
 .topContent {
@@ -826,7 +835,7 @@
 /* Celular */
 @media (max-width: 768px) {
   .contentContainer {
-    padding: 5rem 1rem 1.5rem 1rem;
+    padding: 1rem 1rem 1.5rem 1rem;
   }
 
   .title {

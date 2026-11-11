@@ -32,8 +32,7 @@ function App() {
         <Route path="/Modulo" element={<Modulo />} />
         <Route path="/Edicao" element={<Edicao />} />
         <Route path="/Finalizacao" element={<Finalizacao />} />
-        <Route path="/CadastroEmpresa" element={<RegisterCompany />} />
-        <Route path="/Quiz" element={<Quiz />} />
+        <Route path="/CadastroEmpresa" element={<RegisterCompany loginOption={false} />} />
       </Routes>
     </BrowserRouter>
     </main>

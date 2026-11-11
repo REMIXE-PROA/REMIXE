@@ -1,16 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200..800&family=Outfit:wght@100..900&display=swap');
 
-.course{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
 
+.course {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
 .coursePage {
   width: 90%;
-  margin-top: 100px;
 
   display: flex;
   align-items: flex-start;
@@ -19,15 +19,18 @@
   color: #0F172A;
 }
 
+/* ---------- Sidebar ---------- */
 
 .courseSidebar {
   width: 20%;
-
+  min-width: 290px; /* evita quebrar com fontes maiores */
   padding: 20px;
 
   background-color: #FFFFFF;
   border-radius: 28px;
-  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.06);
+  border: 1px solid #ebecee; /* ALTERADO: borda para separar do fundo */
+  box-shadow: 0 8px 30px rgba(15, 23, 42, 0.16),
+              0 2px 6px rgba(15, 23, 42, 0.047); /* ALTERADO: sombra mais forte */
 
   display: flex;
   flex-direction: column;
@@ -38,11 +41,12 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 8px;
 }
 
 .sidebarTitle {
   margin: 0;
-  font-size: 18px;
+  font-size: 1.125rem;
   font-weight: 600;
 }
 
@@ -50,28 +54,32 @@
   padding: 6px 14px;
   border-radius: 8px;
   background-color: #F1F5F9;
-  color: #475569;
-  font-size: 14px;
+  color: #475569; /* 6,9:1 sobre #F1F5F9 */
+  font-size: 0.875rem;
+  white-space: nowrap;
 }
 
 .moduleCard {
-  border: 1px solid #E2E8F0;
+  border: 1px solid #94A3B8;
   border-radius: 16px;
   background-color: #FFFFFF;
 }
 
 .moduleCard[open] {
-  border: 2px solid #10B981;
+  border: 2px solid #047857; /* 5,5:1 */
 }
 
 .moduleSummary {
-  padding: 20px 24px;
+  min-height: 44px; /* alvo de toque mínimo */
+  padding: 16px 20px;
+  border-radius: 14px;
 
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 12px;
 
-  font-size: 17px;
+  font-size: 1.0625rem;
   font-weight: 600;
   cursor: pointer;
   list-style: none;
@@ -82,15 +90,17 @@
 }
 
 .chevron {
-  color: #64748B;
+  flex: none;
+  color: #475569;
   transition: transform 0.2s;
 }
 
 .moduleCard[open] .chevron {
   transform: rotate(180deg);
-  color: #10B981;
+  color: #047857;
 }
 
+/* ---------- Lista de aulas ---------- */
 
 .lessonList {
   margin: 0;
@@ -104,7 +114,8 @@
 
 .lesson {
   width: 100%;
-  padding: 14px;
+  min-height: 44px;
+  padding: 12px 14px;
   border: none;
   border-radius: 12px;
   background: none;
@@ -114,20 +125,22 @@
   gap: 14px;
 
   font-family: inherit;
-  font-size: 10px;
+  font-size: 0.9375rem; /* 15px */
   color: #334155;
   text-align: left;
   cursor: pointer;
 }
 
 .lesson:hover {
-  background-color: #F8FAFC;
+  background-color: #F1F5F9;
 }
 
+/* Aula atual: não depende só de cor (barra lateral + negrito) */
 .lessonCurrent,
 .lessonCurrent:hover {
   background-color: #EFF6FF;
-  font-weight: 600;
+  box-shadow: inset 4px 0 0 #1D4ED8;
+  font-weight: 700;
   color: #0F172A;
 }
 
@@ -136,13 +149,13 @@
   width: 22px;
   height: 22px;
   border-radius: 50%;
-  border: 2px solid #CBD5E1;
-  background-color: #E2E8F0;
+  border: 2px solid #64748B; /* 4,8:1 */
+  background-color: #FFFFFF;
 }
 
 .lessonStatusDone {
   position: relative;
-  border-color: #3B82F6;
+  border-color: #1D4ED8;
   background-color: transparent;
 }
 
@@ -153,43 +166,50 @@
   top: 2px;
   width: 5px;
   height: 9px;
-  border: solid #3B82F6;
+  border: solid #1D4ED8;
   border-width: 0 2px 2px 0;
   transform: rotate(45deg);
 }
 
 .lessonName {
-  font-size: 12px;
+  flex: 1;
+  font-size: 0.9375rem;
+  line-height: 1.4;
 }
 
 .lessonProgress {
+  flex: none;
   padding: 4px 10px;
   border-radius: 6px;
   background-color: #F1F5F9;
-  color: #64748B;
-  font-size: 10px;
+  color: #475569; /* antes #64748B (4,4:1) */
+  font-size: 0.875rem;
   font-weight: 600;
 }
 
 .lessonProgressDone {
   background-color: #FFFFFF;
-  border: 1px solid #93C5FD;
-  color: #2563EB;
+  border: 1px solid #1D4ED8;
+  color: #1D4ED8;
 }
+
+/* ---------- Conteúdo da aula ---------- */
 
 .lessonContent {
   flex: 1;
   min-width: 0;
   padding: 40px 48px;
-
+  margin-bottom: 20px;
   background-color: #FFFFFF;
   border-radius: 28px;
-  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.06);
+  border: 1px solid #ebecee; /* ALTERADO: borda para separar do fundo */
+  box-shadow: 0 8px 30px rgba(15, 23, 42, 0.16),
+              0 2px 6px rgba(15, 23, 42, 0.047); /* ALTERADO: sombra mais forte */
 }
 
 .customizeTitle {
   margin: 0 0 20px;
-  font-size: 15px;
+  font-size: 1rem;
   font-weight: 700;
 }
 
@@ -201,46 +221,51 @@
 }
 
 .chip {
+  min-height: 44px;
   padding: 10px 24px;
   border-radius: 999px;
-  border: 1px solid #CBD5E1;
+  border: 1px solid #64748B; /* antes #CBD5E1 (1,5:1) */
   background-color: #FFFFFF;
-  color: #475569;
+  color: #334155;
 
   font-family: inherit;
-  font-size: 16px;
+  font-size: 1rem;
   cursor: pointer;
 }
 
 .chip:hover {
-  border-color: #10B981;
-  color: #10B981;
+  border-color: #047857;
+  color: #047857; /* antes #10B981 (2,5:1) */
 }
 
 .chipActive,
 .chipActive:hover {
-  background-color: #10B981;
-  border-color: #10B981;
+  background-color: #047857; /* texto branco: 5,5:1 */
+  border-color: #047857;
   color: #FFFFFF;
+  font-weight: 600;
 }
 
 .lessonTitle {
-    font-family: var(--font-reading);
+  font-family: var(--font-reading);
   margin: 0 0 16px;
-  font-size: 30px;
+  font-size: clamp(1.625rem, 3vw, 1.875rem);
   font-weight: 700;
-  letter-spacing: -1px;
+  letter-spacing: -0.02em;
+  line-height: 1.25;
 }
 
 .lessonDescription {
-    font-family: var(--font-reading);
+  font-family: var(--font-reading);
+  max-width: 70ch; /* linhas confortáveis de ler */
   margin: 0 0 28px;
   color: #475569;
-  font-size: 18px;
+  font-size: 1.125rem;
   line-height: 1.8;
 }
 
 /* ---------- Vídeo ---------- */
+
 .videoPlayer {
   position: relative;
   border-radius: 24px;
@@ -262,28 +287,52 @@
   border-radius: 8px;
   background-color: #0F172A;
   color: #FFFFFF;
-  font-size: 15px;
+  font-size: 0.9375rem;
   font-weight: 600;
 }
 
+/* ---------- Preferências do usuário ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+/* Modo de alto contraste do Windows */
+@media (forced-colors: active) {
+  .lessonCurrent {
+    outline: 2px solid Highlight;
+  }
+
+  .chipActive {
+    outline: 2px solid Highlight;
+  }
+
+  .lessonStatusDone::after {
+    border-color: CanvasText;
+  }
+}
 
 /* ---------- Responsivo ---------- */
+
 @media (max-width: 900px) {
   .coursePage {
     flex-direction: column;
+    margin-top: 15px;
   }
 
   .courseSidebar {
     flex: none;
     width: 100%;
+    min-width: 0;
   }
 
   .lessonContent {
     width: 100%;
     padding: 28px 24px;
-  }
-
-  .lessonTitle {
-    font-size: 28px;
   }
 }

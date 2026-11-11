@@ -1,474 +1,686 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@100..900&family=Plus+Jakarta+Sans:wght@200..800&display=swap');
 
-
-
+/* ---------- Base ---------- */
 .texto_preto{
     color: black;
-    
 }
 
 .fundao{
+    --fonte-texto: 'Plus Jakarta Sans', 'Inter', sans-serif;
+    --fonte-titulo: 'Outfit', 'Plus Jakarta Sans', sans-serif;
+    --verde: #10B981;
+    --borda: #E2E8F0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 100%;
-    height: 100%;
+    min-height: 100vh;
+    min-height: 100dvh;
     background-color: #F1F5F9;
     color: #64748B;
-    font-family: 'Inter', sans-serif;
+    font-family: var(--fonte-texto);
     font-size: 16px;
     font-weight: 600;
 }
 
-.fundao .fundo{
+.fundao :is(input, button, textarea, select){
+    font-family: inherit;
+}
+
+.fundo{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    align-self: center;
     width: 90%;
-    height: 100%;
-    margin: auto;
-}
-
-.fundao .fundo .header_separacao{
-    width: 100%;
-    height: 110px;
-}
-
-.fundao .conteudo .titulo_curso{
-    width: 10.5%;
-    margin-left: 0.3%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-}
-
-.fundao .conteudo .titulo_curso .seta{
-    width: 10%;
-}
-
-.fundao .fundo .conteudo .etapas{
-    width: 100%;
-    height: 100px;
-    border: 1px solid #E2E8F0;
-    border-radius: 15px;
-    margin-top: 1.2%;
-    background-color: white;
-    display: flex;
-}
-
-.fundao .fundo .conteudo .etapas .etapas_ajuste{
-    width: 70%;
-    height: 40%;
-    margin: auto;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-}
-
-.fundao .fundo .conteudo .etapas .etapas_ajuste .circulo{
-    width: 3.4%;
-    height: 100%;
-    border: 1px solid black;
-    background-color: #F1F5F9;
-    border-radius: 100%;
-    padding-top: 0.7%;
-    padding-left: 1.19%;
-}
-
-.fundao .fundo .conteudo .etapas .etapas_ajuste .circulo_verde{
-    width: 3.4%;
-    height: 100%;
-    background-color: #10B981;
-    border: 1px solid black;
-    border-radius: 100%;
-    color: white;
-    padding-top: 0.7%;
-    padding-left: 1.1%;
-}
-
-.fundao .fundo .conteudo .etapas .etapas_ajuste .linha1{
-    width: 30%;
-    height: 2px;
-    margin-top: 1.55%;
-    background-color: #10B981;
-}
-
-.fundao .fundo .conteudo .etapas .etapas_ajuste .linha2{
-    width: 30%;
-    height: 2px;
-    margin-top: 1.55%;
-    background-color: black;
-}
-
-.fundao .fundo .conteudo .etapas .etapas_ajuste p{
-    margin-top: 0.7%;
-}
-
-.fundao .fundo .conteudo .dados_curso{
-    width: 100%;
-    height: 578px;
-    border: 1px solid #E2E8F0;
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
-    margin-top: 2%;
-    background-color: #FFFFFF;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-}
-
-.fundao .fundo .conteudo .dados_curso .dados_caixa1{
-    width: 75%;
-    height: 90%;
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-    border: 1px solid #E2E8F0;
-    border-radius: 20px;
-    background-color: white;
-    overflow-x: auto;
-}
-
-.fundao .fundo .conteudo .dados_curso .dados_caixa2{
-    width: 20%;
-    height: 90%;
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-}
-
-.fundao .fundo .conteudo .dados_curso .dados_caixa2 .adicao_modulo{
-    width: 100%;
-    min-height: 45%;
-    border: 1px solid #E2E8F0;
-    border-radius: 15px;
-}
-
-.fundao .fundo .conteudo .dados_curso .dados_caixa2 .adicao_modulo .linha_fina{
-    width: 90%;
-    height: 0.2px;
-    background-color: #E2E8F0;
-    margin-left: 3%;
-    
-}
-
-.fundao .fundo .conteudo .dados_curso .dados_caixa2 .adicao_modulo .ajuste_modulo{
-   margin-top: 4%;
-    display: column;
-}
-
-.fundao .fundo .conteudo .dados_curso .dados_caixa2 .adicao_modulo .ajuste_modulo{
-   margin-top: 4%;
-    display: column;
-}
-
-.fundao .fundo .conteudo .dados_curso .dados_caixa2 .adicao_modulo .ajuste_modulo .input_modulo{
-   width: 100%;
-   min-height: 60px;
-   display: none;
-   display: flex;
-   flex-direction: column;
-   padding-left: 3%;
-   padding-top: 3%;
-   display: none;
-   margin-bottom: 7%;
-
-}
-
-.fundao .fundo .conteudo .dados_curso .dados_caixa2 .adicao_modulo .ajuste_modulo .input_modulo p{
-   margin-left: 0.3%;
-   margin-top: 2%;
-
-}
-
-
-.fundao .fundo .conteudo .dados_curso .dados_caixa2 .adicao_modulo .ajuste_modulo .input_modulo input{
-   height: 25px;
-   margin-top: 3%;
-   border-radius: 8px;
-   border: 1px solid #E2E8F0 ;
-   padding-left: 1%;
-   
-
-}
-
-.fundao .fundo .conteudo .dados_curso .dados_caixa2 .adicao_modulo .ajuste_modulo .input_modulo button{
-    width: 80px;
-    height: 25px;
-    background-color: #10B981;
-    color: white;
-    border: none;
-    border-radius: 10px;
-    font-size: 13px;
-    font-weight: 700;
-    cursor: pointer;
-    transition: background-color 0.2s ease;
-    margin-left: 2%;
-    
-
-}
-
-.fundao .fundo .conteudo .dados_curso .dados_caixa2 .adicao_modulo .ajuste_modulo .botao_modulo{
-   width: 100%;
-   height: 60px;
-   display: flex;
-   background: transparent;
-   border: none;
-   cursor: pointer;
-   transition: all 0.15s ease;
-
-}
-
-.fundao .fundo .conteudo .dados_curso .dados_caixa2 .adicao_modulo .ajuste_modulo .botao_modulo:hover{
-    background-color: #F0F7FC;
-    color: #24577D;
-    transform: translateX(1px);
-    border-radius: 8px;
-}
-
-.fundao .fundo .conteudo .dados_curso .dados_caixa2 .adicao_modulo .ajuste_modulo .mais{
-   font-size: 40px;
-   color: #94A3B8;
-   margin-top: 2.5%;
-   margin-left: 4%;
-}
-
-.fundao .fundo .conteudo .dados_curso .dados_caixa2 .adicao_modulo .ajuste_modulo .titulo_botao{
-   font-size: 30px;
-   color: #334155;
-   margin-top: 4%;
-   margin-left: 5%;
-}
-
-.fundao .fundo .conteudo .finalizacao{
-    width: 100%;
-    height: 90px;
-    border: 1px solid #E2E8F0;
-    border-end-end-radius: 15px;
-    border-end-start-radius: 15px;
-    display: flex;
-    background-color: #F9FBFD;
-}
-
-.fundao .fundo .conteudo .finalizacao .ajuste{
-    width: 95%;
-    height: 60%;
-    margin: auto;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    
-
-}
-
-.fundao .fundo .conteudo .finalizacao .ajuste .botao_voltar{
-    width: 15%;
-    height: 75%;
-    margin: auto 0;
-    border: 1px solid #E2E8F0;
-    border-radius: 15px;
-    text-decoration: none;
-    display: inline-block;
-    padding-top: 0.5%;
-    padding-left: 0.5%;
-    color: black;
-    background-color: white;
-    
-}
-
-.fundao .fundo .conteudo .finalizacao .ajuste .botao_avancar{
-    width: 8%;
-    height: 90%;
-    margin: auto 0;
-    border-radius: 15px;
-    text-decoration: none;
-    display: inline-block;
-    padding-top: 0.8%;
-    padding-left: 1.6%;
-    color: white;
-    background-color: #10B981;
-}
-
-/* Comandos do javascripot */
-
-.fundao .fundo .conteudo .dados_curso .dados_caixa2 .adicao_modulo .ajuste_modulo .aberto{
-   display: block;
-}
-
-.input_modulo_texto{}
-
-.fundao .fundo .conteudo .dados_curso .dados_caixa1 .fundo_modulo{
-     width: 100%;
-    min-height: 80px;
     box-sizing: border-box;
-    flex-shrink: 0;
-    border-radius: 20px;
-    background-color: #2563EB;
-    margin-bottom: 12px;
-    padding-left: 2%;
-
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-
+    padding: 24px 0 40px;
 }
 
-.fundao .fundo .conteudo .dados_curso .dados_caixa1 .caixa_escondida{
-    width: 100%;
-    min-height: 150px;
-    box-sizing: border-box;
-    flex-shrink: 0;
-    background-color: white;
-    border: 1px solid rgb(187, 187, 187);
-    display: none;
-
-}
-
-.fundao .fundo .conteudo .dados_curso .dados_caixa1 .caixa_escondida .caixa_texto{
-    width: 100%;
-    min-height: 50px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-
-
-}
-
-.fundao .fundo .conteudo .dados_curso .dados_caixa1 .caixa_escondida .caixa_texto .caixa_input_texto{
-    width: 92.5%;
-    min-height: 30px;
-    margin-left: 1%;
-    margin-right: 0.5%;
-    padding-left: 0.4%;
-    border: 1px solid rgb(187, 187, 187);
-    border-radius: 10px;
-
-}
-
-.fundao .fundo .conteudo .dados_curso .dados_caixa1 .caixa_escondida .caixa_texto  .botao_input_texto_topico{
-    width: 5%;
-    height: 30px;
-    background-color: #10B981;
-    color: white;
-    border: none;
-    border-radius: 10px;
-    font-size: 13px;
-    font-weight: 700;
-    cursor: pointer;
-    transition: background-color 0.2s ease;
-}
-
-.fundao .fundo .conteudo .dados_curso .dados_caixa1 .caixa_escondida .caixa_input{
-    width: 97.7%;
-    min-height: 90px;
-    padding-top: 1%;
+.conteudo{
     display: flex;
     flex-direction: column;
-
+    width: 100%;
 }
 
-.fundao .fundo .conteudo .dados_curso .dados_caixa1 .caixa_escondida .caixa_input .topico{
-    width: 100%;
-    margin-left: 1%;
-    min-height: 50px;
+.titulo_curso{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 12px;
+    padding-left: 4px;
+}
+
+.titulo_curso :is(h1, h2, h3, p){
+    margin: 0;
+    font-family: var(--fonte-titulo);
+}
+
+.titulo_curso .seta,
+.titulo_curso .setao,
+.titulo_curso img{
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    flex: none;
+    width: 14px;
+    height: auto;
 }
 
-.fundao .fundo .conteudo .dados_curso .dados_caixa1 .caixa_escondida .caixa_input .topico .botoes_esquerda{
-    width: 10.7%;
-    min-height: 50px;
-    display: flex;
-    justify-content: space-between;
-
-}
-
-.fundao .fundo .conteudo .dados_curso .dados_caixa1 .caixa_escondida .caixa_input .topico .botoes_esquerda .botao_excluir_topico{
-    width: 40%;
-    font-size: 29px;
-    background: none;
-    border: none;
-}
-
-.fundao .fundo .conteudo .dados_curso .dados_caixa1 .caixa_escondida .caixa_input .topico .botoes_esquerda .botao_excluir_topico:hover{
-    color: #ff4d4d;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.fundao .fundo .conteudo .dados_curso .dados_caixa1 .caixa_escondida .caixa_input .topico .botoes_esquerda .botao_editar_topico{
-    width: 40%;
-    font-size: 29px;
+/* ---------- Etapas ---------- */
+.etapas{
     display: flex;
     align-items: center;
     justify-content: center;
-    
+    width: 100%;
+    min-height: 100px;
+    box-sizing: border-box;
+    margin-top: 16px;
+    border: 1px solid var(--borda);
+    border-radius: 15px;
+    background-color: white;
 }
 
-.fundao .fundo .conteudo .dados_curso .dados_caixa1 .caixa_escondida .caixa_input .topico .botoes_esquerda .botao_editar_topico:hover{
-    color: rgb(0, 119, 255);
-    cursor: pointer;
-    transition: 0.3s;
-    
-}
-
-
-
-.fundao .fundo .conteudo .dados_curso .dados_caixa1 .abrir{
-    display: block;
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
-    margin-bottom: 16px;
-
-
-}
-
-.fundao .fundo .conteudo .dados_curso .dados_caixa1 .ajustarMargin{
-    margin-bottom: 0;
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
-
-}
-
-.fundao .fundo .conteudo .dados_curso .dados_caixa1 .fundo_modulo .titulo{
-    color: white;
-    font-size: 25px;
-}
-.fundao .fundo .conteudo .dados_curso .dados_caixa1 .fundo_modulo .caixa{
-    width: 8%;
-    height: 50%;
-    margin-right: 3%;
+.etapas_ajuste{
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    gap: 12px;
+    width: 70%;
 }
 
-.fundao .fundo .conteudo .dados_curso .dados_caixa1 .fundo_modulo .caixa .buttonExcluir{
-    width: 25%;
-    height: 100%;
-    font-size: 29px;
+.etapas_ajuste .circulo,
+.etapas_ajuste .circulo_verde{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: none;
+    width: 40px;
+    height: 40px;
+    box-sizing: border-box;
+    padding: 0;
+    border: 1px solid black;
+    border-radius: 50%;
+    font-size: 16px;
+    line-height: 1;
+}
+
+.etapas_ajuste .circulo{
+    background-color: #F1F5F9;
+}
+
+.etapas_ajuste .circulo_verde{
+    background-color: var(--verde);
     color: white;
-    background: none;
-    border: none;
 }
 
-.fundao .fundo .conteudo .dados_curso .dados_caixa1 .fundo_modulo .caixa .buttonExcluir:hover{
+.etapas_ajuste .linha1,
+.etapas_ajuste .linha2{
+    flex: 1;
+    min-width: 8px;
+    height: 2px;
+}
+
+.etapas_ajuste .linha1{ background-color: #10B981; }
+.etapas_ajuste .linha2{ background-color: black; }
+
+.etapas_ajuste p{
+    flex: none;
+    margin: 0;
+    white-space: nowrap;
+}
+
+/* ---------- Módulo ---------- */
+.dados_curso{
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: space-between;
+    gap: 24px;
+    width: 100%;
+    height: 578px;
+    border: 1px solid #E2E8F0;
+    height: 620px;
+    box-sizing: border-box;
+    padding: 24px;
+    margin-top: 16px;
+    border: 1px solid var(--borda);
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    background-color: #FFFFFF;
+}
+
+.dados_caixa1{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-width: 0;
+    box-sizing: border-box;
+    padding: 16px;
+    overflow: auto;
+    border: 1px solid var(--borda);
+    border-radius: 20px;
+    background-color: white;
+}
+
+.dados_caixa2{
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 22%;
+    min-width: 260px;
+}
+
+/* --- Adicionar módulo --- */
+.adicao_modulo{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    box-sizing: border-box;
+    padding: 16px;
+    border: 1px solid var(--borda);
+    border-radius: 15px;
+}
+
+.linha_fina{
+    flex: none;
+    width: 100%;
+    height: 1px;
+    background-color: var(--borda);
+}
+
+.ajuste_modulo{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.input_modulo{
+    display: none;
+    flex-direction: column;
+    gap: 8px;
+    padding: 0 4px;
+}
+
+.input_modulo p{
+    margin: 0;
+}
+
+.input_modulo input,
+.input_modulo_texto{
+    width: 100%;
+    height: 36px;
+    box-sizing: border-box;
+    padding: 0 12px;
+    border: 1px solid var(--borda);
+    border-radius: 8px;
+}
+
+.input_modulo button{
+    align-self: flex-start;
+    height: 34px;
+    padding: 0 18px;
+    border: none;
+    border-radius: 10px;
+    background-color: var(--verde);
+    color: white;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.botao_modulo{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    min-height: 60px;
+    box-sizing: border-box;
+    padding: 0 8px;
+    border: none;
+    border-radius: 8px;
+    background: transparent;
+    text-align: left;
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.botao_modulo:hover{
+    background-color: #F0F7FC;
+    transform: translateX(1px);
+}
+
+.botao_modulo:hover .titulo_botao{
+    color: #24577D;
+}
+
+.botao_modulo p{
+    margin: 0;
+}
+
+.ajuste_modulo .mais{
+    flex: none;
+    font-size: 32px;
+    line-height: 1;
+    color: #94A3B8;
+}
+
+.ajuste_modulo .titulo_botao{
+    font-family: var(--fonte-titulo);
+    font-size: 20px;
+    color: #334155;
+}
+
+/* --- Lista de módulos --- */
+.fundo_modulo{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    flex-shrink: 0;
+    width: 100%;
+    min-height: 80px;
+    box-sizing: border-box;
+    padding: 16px 24px;
+    margin-bottom: 12px;
+    border-radius: 20px;
+    background-color: #2563EB;
+}
+
+.fundo_modulo .titulo{
+    min-width: 0;
+    margin: 0;
+    overflow-wrap: anywhere;
+    font-family: var(--fonte-titulo);
+    font-size: 25px;
+    color: white;
+}
+
+.fundo_modulo .caixa{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 16px;
+    flex: none;
+}
+
+.fundo_modulo .caixa .buttonExcluir,
+.fundo_modulo .caixa .buttonAbrir{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px;
+    border: none;
+    background: none;
+    color: white;
+    font-size: 26px;
+    cursor: pointer;
+}
+
+.fundo_modulo .caixa .buttonExcluir:hover{
     color: #ff4d4d;
-    cursor: pointer;
     transition: 0.3s;
 }
 
-.fundao .fundo .conteudo .dados_curso .dados_caixa1 .fundo_modulo .caixa .buttonAbrir{
-    width: 25%;
-    height: 75%;
-    font-size: 29px;
-    margin: auto 0;
-    color: white;
-    background: none;
-    border: none;
-}
-
-.fundao .fundo .conteudo .dados_curso .dados_caixa1 .fundo_modulo .caixa .buttonAbrir:hover{
+.fundo_modulo .caixa .buttonAbrir:hover{
     color: #b8b8b8;
-    cursor: pointer;
     transition: 0.3s;
 }
 
+/* --- Caixa que abre dentro do módulo --- */
+.caixa_escondida{
+    display: none;
+    flex-direction: column;
+    flex-shrink: 0;
+    width: 100%;
+    min-height: 150px;
+    box-sizing: border-box;
+    border: 1px solid rgb(187, 187, 187);
+    background-color: white;
+}
 
+.caixa_texto{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px 16px;
+}
+
+.caixa_input_texto{
+    flex: 1;
+    min-width: 0;
+    height: 36px;
+    box-sizing: border-box;
+    padding: 0 12px;
+    border: 1px solid rgb(187, 187, 187);
+    border-radius: 10px;
+}
+
+.botao_input_texto_topico{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: none;
+    min-width: 64px;
+    height: 36px;
+    padding: 0 16px;
+    border: none;
+    border-radius: 10px;
+    background-color: var(--verde);
+    color: white;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.caixa_input{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 8px 16px;
+}
+
+.topico{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    width: 100%;
+    min-height: 50px;
+}
+
+.topico p{
+    min-width: 0;
+    margin: 0;
+    overflow-wrap: anywhere;
+}
+
+.botoes_esquerda{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex: none;
+}
+
+.botao_excluir_topico,
+.botao_editar_topico{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2px;
+    border: none;
+    background: none;
+    font-size: 26px;
+    cursor: pointer;
+}
+
+
+
+.botao_excluir_topico img ,.botao_editar_topico img {
+    width: 24px;
+    height: 24px;
+    display: block;
+}
+
+/* --- Estados controlados pelo JavaScript (manter por último) --- */
+.aberto{
+    display: flex;
+}
+
+.abrir{
+    display: flex;
+    margin-bottom: 16px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.ajustarMargin{
+    margin-bottom: 0;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+/* ---------- Rodapé (voltar / avançar) ---------- */
+.finalizacao{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    min-height: 90px;
+    box-sizing: border-box;
+    border: 1px solid var(--borda);
+    border-end-end-radius: 15px;
+    border-end-start-radius: 15px;
+    background-color: #F9FBFD;
+}
+
+.finalizacao .ajuste{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 16px 24px;
+}
+
+.botao_voltar,
+.botao_avancar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    padding: 12px 28px;
+    border-radius: 15px;
+    text-decoration: none;
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+.botao_voltar{
+    border: 1px solid var(--borda);
+    background-color: white;
+    color: black;
+}
+
+.botao_avancar{
+    border: none;
+    background-color: var(--verde);
+    color: white;
+}
+
+
+
+/* ---------- Responsivo ---------- */
+
+/* Tablet */
+@media (max-width: 1024px) {
+    .fundo{
+        width: 94%;
+    }
+
+    .etapas_ajuste{
+        width: 90%;
+    }
+}
+
+/* Tablet retrato */
+@media (max-width: 900px) {
+    .dados_curso{
+        flex-direction: column;
+        height: auto;
+        padding: 16px;
+        gap: 16px;
+    }
+
+    .dados_caixa1{
+        flex: none;
+        min-height: 300px;
+        overflow: visible;
+    }
+
+    .dados_caixa2{
+        flex: none;
+        min-width: 0;
+    }
+}
+
+/* Celular */
+@media (max-width: 768px) {
+    .etapas{
+        min-height: 0;
+        padding: 16px 0;
+        border-radius: 12px;
+    }
+
+    .etapas_ajuste{
+        width: 92%;
+        gap: 8px;
+    }
+
+    .etapas_ajuste .circulo,
+    .etapas_ajuste .circulo_verde{
+        width: 32px;
+        height: 32px;
+        font-size: 14px;
+    }
+
+    .etapas_ajuste p{
+        font-size: 12px;
+    }
+
+    .finalizacao .ajuste{
+        padding: 16px;
+        gap: 12px;
+    }
+
+    .botao_voltar,
+    .botao_avancar{
+        flex: 1;
+        padding: 12px 16px;
+    }
+
+    .fundo_modulo{
+        padding: 12px 16px;
+    }
+
+    .fundo_modulo .titulo{
+        font-size: 20px;
+    }
+
+    .fundo_modulo .caixa{
+        gap: 12px;
+    }
+
+    .fundo_modulo .caixa .buttonExcluir,
+    .fundo_modulo .caixa .buttonAbrir{
+        font-size: 24px;
+    }
+
+    .caixa_texto{
+        padding: 8px 12px;
+    }
+
+    .caixa_input{
+        padding: 8px 12px;
+    }
+
+    .botao_excluir_topico,
+    .botao_editar_topico{
+        font-size: 24px;
+    }
+}
+
+/* Celular pequeno */
+@media (max-width: 480px) {
+    .fundao{
+        font-size: 14px;
+    }
+
+    .fundo{
+        width: 96%;
+    }
+
+    .etapas{
+        padding: 12px 0;
+    }
+
+    .etapas_ajuste{
+        width: 94%;
+        gap: 6px;
+    }
+
+    .etapas_ajuste .circulo,
+    .etapas_ajuste .circulo_verde{
+        width: 28px;
+        height: 28px;
+        font-size: 12px;
+    }
+
+    .etapas_ajuste p{
+        font-size: 11px;
+    }
+
+    .finalizacao .ajuste{
+        flex-direction: column-reverse;
+    }
+
+    .botao_voltar,
+    .botao_avancar{
+        flex: none;
+        width: 100%;
+    }
+
+    .dados_curso{
+        padding: 12px;
+    }
+
+    .dados_caixa1{
+        padding: 12px;
+    }
+
+    .fundo_modulo{
+        padding: 10px 12px;
+    }
+
+    .fundo_modulo .titulo{
+        font-size: 17px;
+    }
+
+    .fundo_modulo .caixa{
+        gap: 8px;
+    }
+
+    .fundo_modulo .caixa .buttonExcluir,
+    .fundo_modulo .caixa .buttonAbrir{
+        font-size: 22px;
+    }
+
+    .ajuste_modulo .mais{
+        font-size: 28px;
+    }
+
+    .ajuste_modulo .titulo_botao{
+        font-size: 18px;
+    }
+
+    .botao_excluir_topico,
+    .botao_editar_topico{
+        font-size: 20px;
+    }
+}
+
+/* Telas muito estreitas: só os números das etapas */
+@media (max-width: 400px) {
+    .etapas_ajuste p{
+        display: none;
+    }
+}

@@ -1,7 +1,7 @@
 import Styles from '../components/css/modulo.module.css'
 import Header from '../components/header'
 import Footer from '../components/footer'
-import Seta from '../assets/seta.png'
+import Seta from '../assets/seta.svg'
 import { Link } from 'react-router-dom'
 
 
@@ -93,19 +93,27 @@ function inserir_modulo(){
         let botao_excluir_topico = document.createElement("button")
         botoes_esquerda.appendChild(botao_excluir_topico)
         botao_excluir_topico.classList.add(Styles.botao_excluir_topico)
-        botao_excluir_topico.textContent = "✖"
+
+        
+        let imagem_excluir = document.createElement("img")
+        imagem_excluir.src = "/src/assets/exclude.svg"
+        imagem_excluir.alt = "Excluir"
+        botao_excluir_topico.appendChild(imagem_excluir)
         botao_excluir_topico.addEventListener('click', function(event){
             const apagar_topico = event.currentTarget.parentElement.parentElement
             apagar_topico.remove()
 
-            
         })
 
         let botao_editar_topico = document.createElement("a")
         botoes_esquerda.appendChild(botao_editar_topico)
         botao_editar_topico.classList.add(Styles.botao_editar_topico)
-        botao_editar_topico.textContent = "🖌"
         botao_editar_topico.href = "/edicao"
+
+        let imagem_editar = document.createElement("img")
+        imagem_editar.src = "/src/assets/edicao.svg"
+        imagem_editar.alt = "Editar"
+        botao_editar_topico.appendChild(imagem_editar)
         botao_editar_topico.addEventListener('click', function(event) {
     
         });
@@ -116,14 +124,12 @@ function inserir_modulo(){
 function Modulo(){
     return(
         <div className={Styles.fundao}>
-            <div className={Styles.fundo}>
-                <div className={Styles.header_separacao}>
-                    <Header />
-                </div>       
+            <Header /> 
+            <div className={Styles.fundo}>  
                 <div className={Styles.conteudo}>
                     <div className={Styles.titulo_curso}>
                         <p>Cursos</p>
-                        <img className={Styles.seta} src={Seta} alt="" />
+                        <img className={Styles.setao} src={Seta} alt="" />
                         <p className={Styles.texto_preto}>Novo Curso</p>
 
                     </div>
