@@ -1,3 +1,13 @@
+.headerWrapper {
+  position: absolute;
+  top: 20px;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  z-index: 100; /* acima do overlay (1) e do conteúdo (2) */
+}
+
 .heroSection {
   position: relative;
   display: flex;

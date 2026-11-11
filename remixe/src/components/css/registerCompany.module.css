@@ -513,3 +513,147 @@
     text-transform: uppercase;
     letter-spacing: 0.5px;
 }
+
+/* ---------- Responsivo ---------- */
+
+/* Tablet */
+@media (max-width: 1024px) {
+    .principal {
+        flex-direction: column;
+        gap: 32px;
+        padding: 32px 24px;
+    }
+
+    .conteudoEsquerdo,
+    .conteudoDireito {
+        flex: none;
+        width: 100%;
+    }
+
+    .conteudoDireito {
+        padding: 32px;
+    }
+
+    .tituloPrincipal {
+        font-size: 44px;
+    }
+}
+
+/* Celular */
+@media (max-width: 768px) {
+    .secaoProgresso {
+        padding: 16px;
+    }
+
+    .avisosProgresso {
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-bottom: 16px;
+    }
+
+    .listaEtapas {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .etapa {
+        padding: 12px;
+    }
+
+    .principal {
+        padding: 24px 16px;
+    }
+
+    .tituloPrincipal {
+        font-size: 36px;
+    }
+
+    .subtituloDestaque {
+        font-size: 18px;
+        margin-bottom: 24px;
+    }
+
+    .cabecalhoCartaoInfo {
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .valorNumero {
+        font-size: 22px;
+    }
+
+    .conteudoDireito {
+        padding: 24px;
+    }
+
+    .tituloFormulario {
+        font-size: 26px;
+    }
+
+    .descricaoFormulario {
+        font-size: 16px;
+        margin-bottom: 24px;
+    }
+
+    .tituloGrupo {
+        font-size: 16px;
+    }
+
+    .linhaInputs {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .listaRequisitos {
+        flex-wrap: wrap;
+        gap: 8px 16px;
+    }
+
+    .footer {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+        padding: 20px 16px;
+    }
+
+    .rodapeEsquerdo,
+    .rodapeDireito {
+        flex-wrap: wrap;
+        gap: 8px 16px;
+    }
+}
+
+/* Celular pequeno */
+@media (max-width: 480px) {
+    .principal {
+        padding: 20px 12px;
+    }
+
+    .tituloPrincipal {
+        font-size: 30px;
+    }
+
+    .cartaoInfo {
+        padding: 18px;
+    }
+
+    .gradeNumeros {
+        grid-template-columns: 1fr;
+    }
+
+    .textoRecurso h3 {
+        font-size: 18px;
+    }
+
+    .textoRecurso p {
+        font-size: 15px;
+    }
+
+    .conteudoDireito {
+        padding: 20px 16px;
+    }
+
+    .tituloFormulario {
+        font-size: 22px;
+    }
+}

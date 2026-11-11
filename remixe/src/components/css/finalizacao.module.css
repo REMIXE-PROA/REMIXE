@@ -1,385 +1,523 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@100..900&family=Plus+Jakarta+Sans:wght@200..800&display=swap');
+
+/* ---------- Base ---------- */
 .texto_preto{
     color: black;
 }
 
 .fundao{
+    --fonte-texto: 'Plus Jakarta Sans', 'Inter', sans-serif;
+    --fonte-titulo: 'Outfit', 'Plus Jakarta Sans', sans-serif;
+    --verde: #10B981;
+    --borda: #E2E8F0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    min-height: 100vh;
+    min-height: 100dvh;
     background-color: #F1F5F9;
     color: #64748B;
+    font-family: var(--fonte-texto);
     font-size: 16px;
     font-weight: 600;
 }
 
-.fundao .fundo{
-    width: 90%;
-    height: 100%;
-    margin: auto;
+.fundao :is(input, button, textarea, select){
+    font-family: inherit;
 }
 
-.fundao .fundo .header_separacao{
-    width: 100%;
-    height: 110px;
-}
-
-.fundao .conteudo .titulo_curso{
-    width: 10.5%;
-    margin-left: 0.3%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-}
-
-.fundao .conteudo .titulo_curso .seta{
-    width: 10%;
-}
-
-.fundao .fundo .conteudo .etapas{
-    width: 100%;
-    height: 100px;
-    border: 1px solid #E2E8F0;
-    border-radius: 15px;
-    margin-top: 1.2%;
-    background-color: white;
-    display: flex;
-}
-
-.fundao .fundo .conteudo .etapas .etapas_ajuste{
-    width: 70%;
-    height: 40%;
-    margin: auto;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-}
-
-.fundao .fundo .conteudo .etapas .etapas_ajuste .circulo{
-    width: 3.4%;
-    height: 100%;
-    border: 1px solid black;
-    background-color: #F1F5F9;
-    border-radius: 100%;
-    padding-top: 0.7%;
-    padding-left: 1.19%;
-}
-
-.fundao .fundo .conteudo .etapas .etapas_ajuste .circulo_verde{
-    width: 3.4%;
-    height: 100%;
-    background-color: #10B981;
-    border: 1px solid black;
-    border-radius: 100%;
-    color: white;
-    padding-top: 0.7%;
-    padding-left: 1.1%;
-}
-
-.fundao .fundo .conteudo .etapas .etapas_ajuste .linha1{
-    width: 30%;
-    height: 2px;
-    margin-top: 1.55%;
-    background-color: #10B981;
-}
-
-.fundao .fundo .conteudo .etapas .etapas_ajuste .linha2{
-    width: 30%;
-    height: 2px;
-    margin-top: 1.55%;
-    background-color: #10B981;
-}
-
-.fundao .fundo .conteudo .etapas .etapas_ajuste p{
-    margin-top: 0.7%;
-}
-
-.fundao .fundo .conteudo .dados_curso{
-    width: 100%;
-    height: 620px;
-    margin-top: 2%;
-    display: flex;
-    flex-direction: row;
-    justify-content:space-between;
-}
-
-.fundao .fundo .conteudo .dados_curso .dados_caixa1{
-    width: 49%;
-    height: 95%;
-    display: flex;
-    border: 1px solid #E2E8F0;
-    border-radius: 15px;
-    background-color: #FFFFFF;
-    border: 1px solid #E2E8F0;
+.fundo{
     display: flex;
     flex-direction: column;
-}
-
-.fundao .fundo .conteudo .dados_curso .dados_caixa1 .dados_ajuste{
+    flex: 1;
+    align-self: center;
     width: 90%;
-    height: 90%;
-    margin: auto;
+    box-sizing: border-box;
+    padding: 24px 0 40px;
 }
 
-.fundao .fundo .conteudo .dados_curso .dados_caixa1 .dados_ajuste .titulo_dados{
-    width: 24%;
-    height: 4%;
-    margin-bottom: 2%;
-    display: flex;
-}
-
-.fundao .fundo .conteudo .dados_curso .dados_caixa1 .dados_ajuste .titulo_dados .verde{
-    width: 5.5%;
-    height: 50%;
-    background-color: #10B981;
-    border-radius: 100%;
-    margin: auto 0;
-}
-
-.fundao .fundo .conteudo .dados_curso .dados_caixa1 .dados_ajuste .titulo_dados p{
-   margin-left: 2%;
-   font-size: 20px;
-   color: black;
-}
-
-.fundao .fundo .conteudo .dados_curso .dados_caixa1 .dados_ajuste .ajuste_radius{
-    display: flex;
-    margin-left: 3%;
-    margin-bottom: 1%;
-}
-
-.fundao .fundo .conteudo .dados_curso .dados_caixa1 .dados_ajuste .ajuste_radius .radius{
-    margin-right: 1.5%;
-}
-
-.fundao .fundo .conteudo .dados_curso .dados_caixa1 .dados_ajuste .linha{
-    width: 95%;
-    height: 0.2px;
-    margin: auto;
-    border: 1px solid #E2E8F0;
-    margin-top: 3%;
-    margin-bottom: 3%;
-}
-
-.fundao .fundo .conteudo .dados_curso .dados_caixa1 .dados_ajuste .selecionar{
-    width: 70%;
-    height: 10%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-left: 3%;
-}
-
-.fundao .fundo .conteudo .dados_curso .dados_caixa1 .dados_ajuste .selecionar .botao_selecionar{
-    position: relative;
-    display: inline-block;
-    width: 62px;
-    height: 34px;
-    flex-shrink: 0;
-    
-}
-
-.botao_selecionar input {
+/* Legado: JSX antigo ainda pode ter este espaçador; o Header agora fica no fluxo */
+.header_separacao{
     display: none;
 }
 
-.slider {
-    position: absolute;
-    inset: 0;
-    background-color: #10b981;
-    border-radius: 30px;
-    cursor: pointer;
+.conteudo{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
 }
 
-.check {
-    position: absolute;
-    right: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 38px;
-    height: 38px;
-    border-radius: 50%;
-    background-color: #2864f0;
-    color: white;
+.titulo_curso{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 12px;
+    padding-left: 4px;
+}
+
+.titulo_curso :is(h1, h2, h3, p){
+    margin: 0;
+    font-family: var(--fonte-titulo);
+}
+
+.titulo_curso .seta,
+.titulo_curso .setao,
+.titulo_curso img{
+    display: flex;
+    align-items: center;
+    flex: none;
+    width: 14px;
+    height: auto;
+}
+
+/* ---------- Etapas ---------- */
+.etapas{
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 20px;
-    font-weight: bold;
-    transition: 0.2s;
-}
-
-/* Quando estiver desativado */
-.botao_selecionar input:not(:checked) + .slider {
-    background-color: #d1d5db;
-}
-
-.botao_selecionar input:not(:checked) + .slider .check {
-    right: auto;
-    left: 0;
-}
-
-/* Esconde o ✓ original quando estiver desativado */
-.botao_selecionar input:not(:checked) + .slider .check {
-    font-size: 0;
-}
-
-/* Mostra apenas o × */
-.botao_selecionar input:not(:checked) + .slider .check::after {
-    content: "×";
-    font-size: 20px;
-}
-
-.fundao .fundo .conteudo .dados_curso .dados_caixa1 .dados_ajuste .input_ajuste{
-    width: 25%;
-    height: 8.5%;
-    border: 1px solid #bbbbbb;
-    border-radius: 10px;
-    background-color: #ebebeb;
-    margin-left: 3%;
-    padding-left: 1%;
-}
-
-.fundao .fundo .conteudo .dados_curso .dados_caixa1 .dados_ajuste .ajuste_p{
-    margin-left: 3%;
-    margin-bottom: 1%;
-    margin-top: 5%;
-    font-size: 15px;
-}
-
-.fundao .fundo .conteudo .dados_curso .dados_caixa2{
-    width: 49%;
-    height: 95%;
-    display: flex;
-    flex-direction: column;
-    background-color: #FFFFFF;
-    border: 1px solid #E2E8F0;
+    width: 100%;
+    min-height: 100px;
+    box-sizing: border-box;
+    margin-top: 16px;
+    border: 1px solid var(--borda);
     border-radius: 15px;
+    background-color: white;
 }
 
-.fundao .fundo .conteudo .dados_curso .dados_caixa2 .dados_ajuste{
-    width: 90%;
-    height: 90%;
-    margin: auto;
-}
-
-.fundao .fundo .conteudo .dados_curso .dados_caixa2 .dados_ajuste .titulo_dados{
-    width: 30%;
-    height: 4%;
-    margin-bottom: 2%;
-    display: flex;
-}
-
-.fundao .fundo .conteudo .dados_curso .dados_caixa2 .dados_ajuste .titulo_dados .verde{
-    width: 5%;
-    height: 50%;
-    background-color: #10B981;
-    border-radius: 100%;
-    margin: auto 0;
-}
-
-.fundao .fundo .conteudo .dados_curso .dados_caixa2 .dados_ajuste .titulo_dados p{
-   margin-left: 2%;
-   font-size: 20px;
-   color: black;
-}
-
-.fundao .fundo .conteudo .dados_curso .dados_caixa2 .dados_ajuste .ajuste_radius{
-    display: flex;
-    margin-left: 3%;
-    margin-bottom: 1%;
-}
-
-.fundao .fundo .conteudo .dados_curso .dados_caixa2 .dados_ajuste .ajuste_radius .radius{
-    margin-right: 1.5%;
-}
-
-.fundao .fundo .conteudo .dados_curso .dados_caixa2 .dados_ajuste .linha{
-    width: 95%;
-    height: 0.2px;
-    margin: auto;
-    border: 1px solid #E2E8F0;
-    margin-top: 3%;
-    margin-bottom: 3%;
-}
-
-.fundao .fundo .conteudo .dados_curso .dados_caixa2 .dados_ajuste .selecionar{
-    width: 70%;
-    height: 10%;
-    border: 1px solid black;
+.etapas_ajuste{
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    margin-left: 3%;
+    gap: 12px;
+    width: 70%;
 }
 
-.fundao .fundo .conteudo .dados_curso .dados_caixa2 .dados_ajuste .selecionar .botao_selecionar{
-    width: 15%;
-    height: 100%;
+.etapas_ajuste .circulo,
+.etapas_ajuste .circulo_verde{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: none;
+    width: 40px;
+    height: 40px;
+    box-sizing: border-box;
+    padding: 0;
     border: 1px solid black;
-    
+    border-radius: 50%;
+    font-size: 16px;
+    line-height: 1;
 }
 
-.fundao .fundo .conteudo .dados_curso .dados_caixa2 .dados_ajuste .input_ajuste{
-    width: 25%;
-    height: 8.5%;
+.etapas_ajuste .circulo{
+    background-color: #F1F5F9;
+}
+
+.etapas_ajuste .circulo_verde{
+    background-color: var(--verde);
+    color: white;
+}
+
+.etapas_ajuste .linha1,
+.etapas_ajuste .linha2{
+    flex: 1;
+    min-width: 8px;
+    height: 2px;
+}
+
+.etapas_ajuste .linha1{ background-color: #10B981; }
+.etapas_ajuste .linha2{ background-color: #10B981; }
+
+.etapas_ajuste p{
+    flex: none;
+    margin: 0;
+    white-space: nowrap;
+}
+
+/* ---------- Finalização ---------- */
+.dados_curso{
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    gap: 24px;
+    width: 100%;
+    min-height: 620px;
+    margin-top: 16px;
+}
+
+.dados_caixa1,
+.dados_caixa2{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-width: 0;
+    border: 1px solid var(--borda);
+    border-radius: 15px;
+    background-color: #FFFFFF;
+}
+
+.dados_ajuste{
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 28px;
+}
+
+.titulo_dados{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.titulo_dados .verde{
+    flex: none;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: var(--verde);
+}
+
+.titulo_dados p{
+    margin: 0;
+    font-family: var(--fonte-titulo);
+    font-size: 20px;
+    color: black;
+}
+
+.ajuste_radius{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding-left: 12px;
+}
+
+.ajuste_radius .radius{
+    flex: none;
+    margin: 0;
+    accent-color: var(--verde);
+}
+
+.linha{
+    flex: none;
+    width: 100%;
+    height: 1px;
+    margin: 6px 0;
+    background-color: var(--borda);
+}
+
+.selecionar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    width: 100%;
+    max-width: 480px;
+    box-sizing: border-box;
+    padding-left: 12px;
+}
+
+.input_ajuste{
+    width: 140px;
+    max-width: 100%;
+    height: 42px;
+    box-sizing: border-box;
+    margin-left: 12px;
+    padding: 0 12px;
     border: 1px solid #bbbbbb;
     border-radius: 10px;
     background-color: #ebebeb;
-    margin-left: 3%;
-    padding-left: 1%;
 }
 
-.fundao .fundo .conteudo .dados_curso .dados_caixa2 .dados_ajuste .ajuste_p{
-    margin-left: 3%;
-    margin-bottom: 1%;
-    margin-top: 5%;
+.ajuste_p{
+    margin: 0 0 0 12px;
     font-size: 15px;
 }
 
+/* Botão liga/desliga */
+.botao_selecionar{
+    display: flex;
+    flex: none;
+    width: 62px;
+    height: 34px;
+}
 
-.fundao .fundo .conteudo .finalizacao{
+/* Botão liga/desliga */
+.botao_selecionar{
+    display: flex;
+    flex: none;
+    width: 62px;
+    height: 34px;
+}
+
+.botao_selecionar input{
+    display: none;
+}
+
+.slider{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
     width: 100%;
-    height: 90px;
-    border: 1px solid #E2E8F0;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 2px;
+    border-radius: 30px;
+    background-color: #d1d5db;          /* desligado */
+    cursor: pointer;
+    transition: background-color 0.25s ease;
+}
+
+/* espaçador: é ele que empurra a bolinha */
+.slider::before{
+    content: "";
+    flex: none;
+    width: 0;
+    transition: width 0.25s ease;
+}
+
+.check,
+.x{
+    display: flex;
+    flex: none;
+    width: 30px;
+    height: 30px;
+    box-sizing: border-box;
+    padding: 7px;
+    border-radius: 50%;
+    background-color: #2864f0;
+    object-fit: contain;
+}
+
+/* desligado: aparece o × */
+.check{
+    display: none;
+}
+
+/* ligado: fundo verde, bolinha vai para a direita, aparece o ✓ */
+.botao_selecionar input:checked + .slider{
+    background-color: #10b981;
+}
+
+.botao_selecionar input:checked + .slider::before{
+    width: 28px;                        /* 62 - 2×2 de padding - 30 da bolinha */
+}
+
+.botao_selecionar input:checked + .slider .check{
+    display: flex;
+}
+
+.botao_selecionar input:checked + .slider .x{
+    display: none;
+}
+
+@media (prefers-reduced-motion: reduce){
+    .slider,
+    .slider::before{
+        transition: none;
+    }
+}
+
+/* ---------- Rodapé (voltar / avançar) ---------- */
+.finalizacao{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    min-height: 90px;
+    box-sizing: border-box;
+    border: 1px solid var(--borda);
     border-end-end-radius: 15px;
     border-end-start-radius: 15px;
-    display: flex;
     background-color: #F9FBFD;
+    margin-top: 16px;
+    border-radius: 15px;
 }
 
-.fundao .fundo .conteudo .finalizacao .ajuste{
-    width: 95%;
-    height: 60%;
-    margin: auto;
+.finalizacao .ajuste{
     display: flex;
     flex-direction: row;
+    align-items: center;
     justify-content: space-between;
-    
-
+    gap: 16px;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 16px 24px;
 }
 
-.fundao .fundo .conteudo .finalizacao .ajuste .botao_voltar{
-    width: 15%;
-    height: 75%;
-    margin: auto 0;
-    border: 1px solid #E2E8F0;
+.botao_voltar,
+.botao_avancar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    padding: 12px 28px;
     border-radius: 15px;
     text-decoration: none;
-    display: inline-block;
-    padding-top: 0.5%;
-    padding-left: 0.5%;
-    color: black;
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+.botao_voltar{
+    border: 1px solid var(--borda);
     background-color: white;
-    
+    color: black;
 }
 
-.fundao .fundo .conteudo .finalizacao .ajuste .botao_avancar{
-    width: 10%;
-    height: 90%;
-    margin: auto 0;
-    border-radius: 15px;
-    text-decoration: none;
-    display: inline-block;
-    padding-top: 0.8%;
-    padding-left: 1.2%;
+.botao_avancar{
+    border: none;
+    background-color: var(--verde);
     color: white;
-    background-color: #10B981;
+}
+
+/* ---------- Responsivo ---------- */
+
+/* Tablet */
+@media (max-width: 1024px) {
+    .fundo{
+        width: 94%;
+    }
+
+    .etapas_ajuste{
+        width: 90%;
+    }
+}
+
+/* Tablet retrato */
+@media (max-width: 900px) {
+    .dados_curso{
+        flex-direction: column;
+        min-height: 0;
+        gap: 16px;
+    }
+
+    .dados_caixa1,
+    .dados_caixa2{
+        flex: none;
+    }
+
+    .dados_ajuste{
+        padding: 20px;
+    }
+
+    .ajuste_radius{
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .selecionar{
+        max-width: none;
+    }
+
+    .input_ajuste{
+        width: 100%;
+        max-width: 320px;
+    }
+}
+
+/* Celular */
+@media (max-width: 768px) {
+    .etapas{
+        min-height: 0;
+        padding: 16px 0;
+        border-radius: 12px;
+    }
+
+    .etapas_ajuste{
+        width: 92%;
+        gap: 8px;
+    }
+
+    .etapas_ajuste .circulo,
+    .etapas_ajuste .circulo_verde{
+        width: 32px;
+        height: 32px;
+        font-size: 14px;
+    }
+
+    .etapas_ajuste p{
+        font-size: 12px;
+    }
+
+    .finalizacao .ajuste{
+        padding: 16px;
+        gap: 12px;
+    }
+
+    .botao_voltar,
+    .botao_avancar{
+        flex: 1;
+        padding: 12px 16px;
+    }
+}
+
+/* Celular pequeno */
+@media (max-width: 480px) {
+    .fundo{
+        font-size: 14px;
+    }
+
+    .fundo{
+        width: 96%;
+    }
+
+    .etapas{
+        padding: 12px 0;
+    }
+
+    .etapas_ajuste{
+        width: 94%;
+        gap: 6px;
+    }
+
+    .etapas_ajuste .circulo,
+    .etapas_ajuste .circulo_verde{
+        width: 28px;
+        height: 28px;
+        font-size: 12px;
+    }
+
+    .etapas_ajuste p{
+        font-size: 11px;
+    }
+
+    .finalizacao .ajuste{
+        flex-direction: column-reverse;
+    }
+
+    .botao_voltar,
+    .botao_avancar{
+        flex: none;
+        width: 100%;
+    }
+
+    .dados_ajuste{
+        padding: 16px;
+    }
+
+    .titulo_dados p{
+        font-size: 16px;
+    }
+
+    .selecionar{
+        font-size: 14px;
+    }
+
+    .input_ajuste{
+        max-width: 100%;
+    }
+
+    .ajuste_p{
+        font-size: 13px;
+    }
+}
+
+/* Telas muito estreitas: só os números das etapas */
+@media (max-width: 400px) {
+    .etapas_ajuste p{
+        display: none;
+    }
 }
