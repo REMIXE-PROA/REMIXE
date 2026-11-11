@@ -292,7 +292,7 @@ async function API(event){
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
-                    "X-goog-api-key": "AQ.Ab8RN6Ihscb_O0ETWpknzyMy4thon50vbYpW3hiqhi-2dKoBTw"
+                    "X-goog-api-key": "Chave aqui!"
                 },
                 body: JSON.stringify({
                     contents: [
