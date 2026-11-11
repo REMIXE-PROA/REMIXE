@@ -22,7 +22,7 @@
 }
 
 .secaoPrincipal{
-    width: 55%;
+    width: 50%;
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -169,8 +169,17 @@
 
 
 
+.secaoLogin{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+
+
 .cardLogin {
-    width: 700px;
+    width: 97%;
     background-color: #ffffff;
     border-radius: 12px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
@@ -392,6 +401,10 @@
     .destaqueTitulo,
     .destaqueTitulo2 {
         font-size: 40px;
+    }
+
+    .secaoLogin {
+        width: 100%;
     }
 
     .footer {

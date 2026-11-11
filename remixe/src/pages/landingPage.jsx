@@ -8,13 +8,15 @@ function LandingPage() {
   return (
     <div className={styles.LandingPageContainer} style={{ position: 'relative', width: '100%', minHeight: '100vh' }}>
       <div className={styles.headerWrapper}>
-        <Header />
+        
       </div>
 
     <section 
       className={styles.heroSection} 
       style={{ backgroundImage: `url(${remixAiImg})` }}
     >
+
+      
       
       {/* Camada escura para garantir a leitura perfeita de todos os textos */}
       <div className={styles.overlay}></div>
@@ -22,6 +24,8 @@ function LandingPage() {
       {/* Container principal que fica por cima do fundo */}
       <div className={styles.contentContainer}>
         
+        <Header />
+
         {/* Textos da parte de cima */}
         <div className={styles.topContent}>
           

@@ -420,14 +420,12 @@
     cursor: pointer;
 }
 
-.botao_excluir_topico:hover{
-    color: #ff4d4d;
-    transition: 0.3s;
-}
 
-.botao_editar_topico:hover{
-    color: rgb(0, 119, 255);
-    transition: 0.3s;
+
+.botao_excluir_topico img ,.botao_editar_topico img {
+    width: 24px;
+    height: 24px;
+    display: block;
 }
 
 /* --- Estados controlados pelo JavaScript (manter por último) --- */
@@ -496,6 +494,8 @@
     background-color: var(--verde);
     color: white;
 }
+
+
 
 /* ---------- Responsivo ---------- */
 

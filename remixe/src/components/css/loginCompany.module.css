@@ -292,15 +292,11 @@
 
 /* ===== RESPONSIVO ===== */
 
-/* telas grandes: recupera o respiro lateral das métricas */
-@media (min-width: 1280px) {
-    .blocoMetrica {
-        padding-right: 90px;
-    }
-}
-
 /* tablet e abaixo: empilha as colunas */
 @media (max-width: 1024px) {
+    .loginCompanyPage {
+        height: 900px;
+    }
     .principal {
         flex-direction: column;
         align-items: stretch;
@@ -316,9 +312,13 @@
         max-width: none;
     }
 
+    .secaoLogin {
+        width: 100%;
+    }
+
     .cartaoLogin {
         min-height: 0;
-        max-width: 640px;
+        max-width: 97%px;
     }
 }
 
