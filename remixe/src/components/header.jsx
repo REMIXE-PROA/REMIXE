@@ -12,7 +12,7 @@ function Header() {
 
             <ul className={Style.navbar}>
                 <li><a href="#">O Problema</a></li>
-                <li><Link to="/creator">Como Funciona</Link></li>
+                <li><a href="#">Como Funciona</a></li>
                 <li><a href="#">Impacto & IA</a></li>
                 <li><a href="#">Planos</a></li>
             </ul>

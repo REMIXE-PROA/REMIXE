@@ -1,26 +1,30 @@
-
 .loginCompanyPage {
-    width: 100%;
-    height: 100%;
-    background-color: #f8fafc;
-    color: #0f172a;
-    margin: 0;
-    padding: 0;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    min-height: 100vh;
 }
 
-/* evita que inputs/cards estourem a largura por causa de padding e borda */
-.loginCompanyPage,
-.loginCompanyPage *,
-.loginCompanyPage *::before,
-.loginCompanyPage *::after {
+.loginCompanyPage{
+    box-sizing: border-box;
+}
+.loginCompanyPage > :not(.principal){
+    flex: none;
+}
+
+.principal,
+.conteudoEsquerda,
+.conteudoDireita,
+.cartaoVitrine,
+.cartaoLogin,
+.inputComIcone input,
+.botaoEntrar{
     box-sizing: border-box;
 }
 
 /* ===== LAYOUT PRINCIPAL ===== */
 .principal {
+    flex: 1;
     width: 100%;
     height: 580px;
     display: flex;
