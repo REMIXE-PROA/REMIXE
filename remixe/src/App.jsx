@@ -1,5 +1,4 @@
 import './App.css'
-import Quiz from './components/quiz.jsx';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import LandingPage from './pages/landingPage.jsx'
 import Presentation from './pages/presentation.jsx'

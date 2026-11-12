@@ -116,7 +116,7 @@ function inserir_modulo(){
         imagem_editar.src = Edicao
         imagem_editar.alt = "Editar"
         botao_editar_topico.appendChild(imagem_editar)
-        botao_editar_topico.addEventListener('click', functionevent(event){
+        botao_editar_topico.addEventListener('click', function(){
     
         });
     })
