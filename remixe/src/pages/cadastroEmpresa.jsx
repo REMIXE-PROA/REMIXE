@@ -3,6 +3,7 @@ import Style from "../components/css/registerCompany.module.css";
 
 import LoginHeader from "../components/loginHeader";
 import FooterLogin from "../components/loginFooter";
+import Olho from "../assets/olho.svg";
 
 function RegisterCompany() {
   return (
@@ -146,7 +147,7 @@ function RegisterCompany() {
                     <span className={Style.iconeInput} aria-hidden="true"></span>
                     <input id="senha" type="password" placeholder="••••••••••••" autoComplete="new-password" required />
                     {/* FUTURO: alterna mostrar/ocultar senha (useState) */}
-                    <button type="button" className={Style.botaoOlho} aria-label="Mostrar senha">👁</button>
+                    <button type="button" className={Style.botaoOlho} aria-label="Mostrar senha"><img src={Olho} alt="Mostrar senha" /></button>
                   </div>
                 </div>
                 <div className={Style.caixaInput}>
@@ -156,7 +157,7 @@ function RegisterCompany() {
                   <div className={Style.envolveInput}>
                     <span className={Style.iconeInput} aria-hidden="true"></span>
                     <input id="confirmarSenha" type="password" placeholder="••••••••••••" autoComplete="new-password" required />
-                    <button type="button" className={Style.botaoOlho} aria-label="Mostrar senha">👁</button>
+                    <button type="button" className={Style.botaoOlho} aria-label="Mostrar senha"><img src={Olho} alt="Mostrar senha" /></button>
                   </div>
                 </div>
               </div>
