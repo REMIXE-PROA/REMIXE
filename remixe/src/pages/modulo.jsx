@@ -3,6 +3,8 @@ import Header from '../components/header'
 import Footer from '../components/footer'
 import Seta from '../assets/seta.svg'
 import { Link } from 'react-router-dom'
+import Exclude from '../assets/exclude.svg'
+import Edicao from '../assets/edicao.svg'
 
 
 function aparecer_input(event){
@@ -96,7 +98,7 @@ function inserir_modulo(){
 
         
         let imagem_excluir = document.createElement("img")
-        imagem_excluir.src = "../src/assets/exclude.svg"
+        imagem_excluir.src = Exclude
         imagem_excluir.alt = "Excluir"
         botao_excluir_topico.appendChild(imagem_excluir)
         botao_excluir_topico.addEventListener('click', function(event){
@@ -111,7 +113,7 @@ function inserir_modulo(){
         botao_editar_topico.href = "/edicao"
 
         let imagem_editar = document.createElement("img")
-        imagem_editar.src = "../src/assets/edicao.svg"
+        imagem_editar.src = Edicao
         imagem_editar.alt = "Editar"
         botao_editar_topico.appendChild(imagem_editar)
         botao_editar_topico.addEventListener('click', function() {
