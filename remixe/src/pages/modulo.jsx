@@ -2,7 +2,7 @@ import Styles from '../components/css/modulo.module.css'
 import Header from '../components/header'
 import Footer from '../components/footer'
 import Seta from '../assets/seta.svg'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate  } from 'react-router-dom'
 import Exclude from '../assets/exclude.svg'
 import Edicao from '../assets/edicao.svg'
 
@@ -13,7 +13,7 @@ function aparecer_input(event){
    input.classList.toggle(Styles.aberto)
 }
     
-function inserir_modulo(){
+function inserir_modulo(navigate){
     let input = document.querySelector("." + Styles.input_modulo_texto)
     let dados_caixa1 = document.querySelector("." + Styles.dados_caixa1)
 
@@ -116,14 +116,16 @@ function inserir_modulo(){
         imagem_editar.src = Edicao
         imagem_editar.alt = "Editar"
         botao_editar_topico.appendChild(imagem_editar)
-        botao_editar_topico.addEventListener('click', function(){
-    
+        botao_editar_topico.addEventListener('click', function(event){
+            event.preventDefault() 
+            navigate("/edicao")
         });
     })
 }
 
 
 function Modulo(){
+    const navigate = useNavigate()
     return(
         <div className={Styles.fundao}>
             <Header /> 
@@ -170,7 +172,7 @@ function Modulo(){
                                     <div className={Styles.input_modulo}>
                                         <p>Nome do módulo</p>
                                         <input className={Styles.input_modulo_texto} maxLength={70} type="text" />
-                                        <button onClick={inserir_modulo}>Enviar ➔</button>
+                                        <button onClick={() => inserir_modulo(navigate)}>Enviar ➔</button>
                                     </div>                  
                                 </div>
                                 
