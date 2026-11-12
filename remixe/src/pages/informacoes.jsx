@@ -2,6 +2,8 @@ import Styles from '../components/css/informacoes.module.css'
 import Header from '../components/header'
 import Footer from '../components/footer'
 import Seta from '../assets/seta.svg'
+import Chain from '../assets/chain.svg'
+import Aspas from '../assets/aspas.svg'
 import { Link } from 'react-router-dom'
 
 function Informacoes(){
@@ -58,8 +60,8 @@ function Informacoes(){
 
                                 <span className={Styles.divisor}></span>
 
-                                <button type="button">🔗</button>
-                                <button type="button"><b>❞</b></button>
+                                <button type="button"><img src={Chain} alt="Link" /></button>
+                                <button type="button"><img src={Aspas} alt="Aspas" /></button>
                                 </div>
 
                                 <textarea
