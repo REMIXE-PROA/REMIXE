@@ -16,7 +16,7 @@ function Footer() {
                         <img src={logo} alt="REMIXE Logo" />
                         <p className={Style.brand}>REMIXE</p>
                     </div>
-                    <p className={Style.frase}>Transformando o aprendizado corporativo em tech com IA contra a evasão.</p>
+                    <p className={Style.frase}>Remixe seu jeito de aprender.</p>
 
                     <div className={Style.socialMedia}>
 
