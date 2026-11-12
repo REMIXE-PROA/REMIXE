@@ -110,13 +110,13 @@ function inserir_modulo(){
         let botao_editar_topico = document.createElement("a")
         botoes_esquerda.appendChild(botao_editar_topico)
         botao_editar_topico.classList.add(Styles.botao_editar_topico)
-        botao_editar_topico.href = "/edicao"
+        botao_editar_topico.href = "/Edicao"
 
         let imagem_editar = document.createElement("img")
         imagem_editar.src = Edicao
         imagem_editar.alt = "Editar"
         botao_editar_topico.appendChild(imagem_editar)
-        botao_editar_topico.addEventListener('click', function() {
+        botao_editar_topico.addEventListener('click', functionevent(event){
     
         });
     })
