@@ -1,17 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200..800&family=Outfit:wght@100..900&display=swap');
-
-
 .course {
   position: relative;
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
+  height: 1400px;
 }
 
 .coursePage {
   width: 90%;
-
+  padding-top: 25px;
   display: flex;
   align-items: flex-start;
   gap: 32px;
@@ -122,7 +121,7 @@
 
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 10px;
 
   font-family: inherit;
   font-size: 0.9375rem; /* 15px */
@@ -173,7 +172,7 @@
 
 .lessonName {
   flex: 1;
-  font-size: 0.9375rem;
+  font-size: 0.8375rem;
   line-height: 1.4;
 }
 
