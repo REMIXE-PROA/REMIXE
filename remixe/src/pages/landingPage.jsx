@@ -1,4 +1,3 @@
-import React from 'react';
 import styles from '../components/css/landingPage.module.css';
 import remixAiImg from '../assets/remixAiImg.png';
 import Header from '../components/header.jsx';
