@@ -5,6 +5,12 @@ import Seta from '../assets/seta.svg'
 import { Link } from 'react-router-dom'
 import Exclude from '../assets/exclude.svg'
 import Edicao from '../assets/edicao.svg'
+import { createElement } from 'react'
+import barras from '../assets/barras.svg'
+import documento from '../assets/documento.svg'
+import foto from '../assets/foto.svg'
+import seta_youtube from '../assets/seta_youtube.svg'
+import yes from '../assets/yes.svg'
 
 
 function aparecer_input(event){
@@ -106,19 +112,146 @@ function inserir_modulo(){
             apagar_topico.remove()
 
         })
+        
+       
+        let fundo_popup = document.createElement("div")
+        topico.appendChild(fundo_popup)
+        fundo_popup.classList.add(Styles.fundo_popup)
 
-        let botao_editar_topico = document.createElement("a")
+        
+        let popup = document.createElement("div")
+        fundo_popup.appendChild(popup)
+        popup.classList.add(Styles.popup)
+
+        
+        let caixa_popup = document.createElement("div")
+        fundo_popup.appendChild(caixa_popup)
+        caixa_popup.classList.add(Styles.caixa_popup)
+
+
+
+        let area_edicao = document.createElement("div")
+        caixa_popup.appendChild(area_edicao)
+        area_edicao.classList.add(Styles.area_edicao)
+
+
+
+        let menu_lateral = document.createElement("div")
+        caixa_popup.appendChild(menu_lateral)
+        menu_lateral.classList.add(Styles.menu_lateral)
+
+
+
+        let titulo_menu = document.createElement("h3")
+        menu_lateral.appendChild(titulo_menu)
+        titulo_menu.textContent = "Adicionar Elementos"
+
+
+
+        let descricao_menu = document.createElement("p")
+        menu_lateral.appendChild(descricao_menu)
+        descricao_menu.textContent = "Selecione o formato para inserir nesta aula"
+
+
+
+        let caixa_botoes = document.createElement("div")
+        menu_lateral.appendChild(caixa_botoes)
+        caixa_botoes.classList.add(Styles.caixa_botoes)
+
+        let botao_voltar_popup = document.createElement("button")
+        menu_lateral.appendChild(botao_voltar_popup)
+        botao_voltar_popup.classList.add(Styles.botao_voltar_popup)
+        botao_voltar_popup.textContent = "← Voltar"
+        botao_voltar_popup.addEventListener('click', function(event){
+        let voltar = event.currentTarget
+        let voltar1 = voltar.parentElement
+        let voltar2 = voltar1.parentElement
+        let voltar3 = voltar2.parentElement
+    
+
+        voltar3.classList.remove(Styles.popup_ativo)
+})
+
+function criar_botao_elemento(nome, icone) {
+
+    let botao = document.createElement("button")
+    caixa_botoes.appendChild(botao)
+
+    botao.addEventListener('click', function(){
+
+    if(nome === "Texto"){
+
+        let caixa_texto_edicao = document.createElement("div")
+        area_edicao.appendChild(caixa_texto_edicao)
+        caixa_texto_edicao.classList.add(Styles.caixa_texto_edicao)
+
+        let campo_texto = document.createElement("textarea")
+        caixa_texto_edicao.appendChild(campo_texto)
+
+        campo_texto.classList.add(Styles.campo_texto_edicao)
+        campo_texto.placeholder = "Digite o conteúdo da sua aula..."
+
+        let botao_excluir_texto = document.createElement("button")
+        caixa_texto_edicao.appendChild(botao_excluir_texto)
+
+        botao_excluir_texto.classList.add(Styles.botao_excluir_texto)
+
+        let imagem_excluir_texto = document.createElement("img")
+        imagem_excluir_texto.src = Exclude
+        imagem_excluir_texto.alt = "Excluir texto"
+
+        botao_excluir_texto.appendChild(imagem_excluir_texto)
+
+        botao_excluir_texto.addEventListener('click', function(event){
+
+            event.currentTarget.parentElement.remove()
+
+        })
+
+    }
+
+})
+
+    let botoes_ajuste = document.createElement("div")
+    botao.appendChild(botoes_ajuste)
+    botoes_ajuste.classList.add(Styles.botoes_ajuste_popup)
+
+    let imagens_ajuste = document.createElement("div")
+    botoes_ajuste.appendChild(imagens_ajuste)
+    imagens_ajuste.classList.add(Styles.imagens_ajuste_popup)
+
+    let imagem = document.createElement("img")
+    imagens_ajuste.appendChild(imagem)
+    imagem.src = icone
+    imagem.alt = nome
+    imagem.classList.add(Styles.imagens_popup)
+
+    let texto = document.createElement("p")
+    botoes_ajuste.appendChild(texto)
+    texto.textContent = nome
+}
+
+
+criar_botao_elemento("Texto", barras)
+criar_botao_elemento("Vídeo", seta_youtube)
+criar_botao_elemento("PDF", documento)
+criar_botao_elemento("Imagem", foto)    
+
+        let botao_editar_topico = document.createElement("button")
         botoes_esquerda.appendChild(botao_editar_topico)
         botao_editar_topico.classList.add(Styles.botao_editar_topico)
-        botao_editar_topico.href = "/edicao"
-
+        botao_editar_topico.addEventListener('click', function(event){
+            let clickTopico = event.currentTarget
+            let PaiTopico = clickTopico.parentElement
+            let paiPaiTopico = PaiTopico.parentElement
+            let Selecionando_fundopopup = paiPaiTopico.children[2]
+            Selecionando_fundopopup.classList.toggle(Styles.popup_ativo)
+        })
+        
         let imagem_editar = document.createElement("img")
         imagem_editar.src = Edicao
         imagem_editar.alt = "Editar"
         botao_editar_topico.appendChild(imagem_editar)
-        botao_editar_topico.addEventListener('click', function() {
-    
-        });
     })
 }
 

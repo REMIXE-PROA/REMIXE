@@ -499,6 +499,204 @@
 
 
 
+.fundo_popup {
+    display: none;
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.35);
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.popup_ativo {
+    display: flex;
+}
+
+.caixa_popup {
+    display: flex;
+    gap: 24px;
+    box-sizing: border-box;
+
+    width: 90%;
+    max-width: none;
+    height: 620px;
+
+    padding: 24px;
+    background: #F1F5F9;
+    border: 1px solid #E2E8F0;
+    border-radius: 15px;
+}
+
+.area_edicao {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: 16px;
+    padding: 20px;
+    background-color: white;
+    border: 1px solid #E2E8F0;
+    border-radius: 8px;
+    min-width: 0;
+    overflow-y: auto;
+}
+
+.menu_lateral {
+    width: 368px;
+    padding: 10px;
+    border: 1px solid #E2E8F0;
+    background-color: white;
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+
+.menu_lateral h3 {
+    font-size: 19px;
+    margin: 0 0 5px;
+}
+
+.menu_lateral p {
+    font-size: 15px;
+    color: #64748B;
+    margin-bottom: 8px;
+}
+
+.caixa_botoes {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.caixa_botoes button {
+    height: 65px;
+    background: white;
+    border: 1px solid #E2E8F0;
+    border-radius: 6px;
+    text-align: left;
+    padding: 0 10px;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.caixa_botoes button:hover {
+    background-color: #ecfff9;
+}
+
+.botao_voltar_popup{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 50px;
+    margin-top: 160px;
+    border: 1px solid #E2E8F0;
+    border-radius: 8px;
+    background-color: white;
+    color: #64748B;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.botao_voltar_popup:hover{
+    background-color: #ecfff9;
+}
+
+.caixa_botoes {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.caixa_botoes button {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    min-height: 65px;
+    padding: 8px 12px;
+    border: 1px solid #E2E8F0;
+    border-radius: 8px;
+    background-color: white;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.caixa_botoes button:hover {
+    background-color: #ecfff9;
+}
+
+.botoes_ajuste_popup {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.imagens_ajuste_popup {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    background-color: #F1F5F9;
+}
+
+.imagens_popup {
+    width: 22px;
+    height: 22px;
+}
+
+.botoes_ajuste_popup p {
+    margin: 0;
+    color: black;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+
+.caixa_texto_edicao{
+    position: relative;
+    width: 100%;
+}
+
+
+.caixa_texto_edicao .campo_texto_edicao{
+    width: 100%;
+    min-height: 150px;
+    box-sizing: border-box;
+    padding: 16px 16px;
+    border: 1px solid #E2E8F0;
+    border-radius: 8px;
+    resize: vertical;
+    font-family: inherit;
+    font-size: 15px;
+}
+
+
+.botao_excluir_texto{
+    position: absolute;
+    top: 10px;
+    right: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border: none;
+    border-radius: 6px;
+    background: white;
+    cursor: pointer;
+}
+
+.botao_excluir_texto img{
+    width: 20px;
+    height: 20px;
+}
+
+
 /* ---------- Responsivo ---------- */
 
 /* Tablet */
