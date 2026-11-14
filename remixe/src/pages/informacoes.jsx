@@ -79,7 +79,42 @@ function Informacoes(){
                                     Imagem de Capa
                                 </p>
                             </div>
-                            <div className={Styles.foto}></div>
+                            <div className={Styles.foto}>
+                            <div className={Styles.upload_conteudo}>
+
+                            <div className={Styles.upload_icone}>
+                                ▧
+                            </div>
+
+                            <p className={Styles.upload_titulo}>
+                                Adicionar imagem de capa
+                            </p>
+
+                            <p className={Styles.upload_descricao}>
+                                Arraste e solte o arquivo aqui ou clique para
+                                selecionar do dispositivo
+                            </p>
+
+                            <label
+                                htmlFor="imagem_capa"
+                                className={Styles.botao_upload}
+                            >
+                            Escolher arquivo do computador
+                            </label>
+
+                            <input
+                                type="file"
+                                id="imagem_capa"
+                                accept="image/png, image/jpeg, image/webp"
+                                hidden
+                            />
+
+                            <p className={Styles.upload_formatos}>
+                                PNG, JPG ou WEBP (máx. 10MB • proporção 16:9)
+                            </p>
+
+                            </div>
+                        </div>
                         </div>
                     </div>
                     <div className={Styles.finalizacao}>
