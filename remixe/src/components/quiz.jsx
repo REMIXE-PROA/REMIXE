@@ -1,385 +1,345 @@
+
 import Styles from './css/quiz.module.css'
-import { Link, useLocation } from "react-router-dom";
 
-let alternativas
+function Quiz() {
 
-function respostaCima1(event){
+    let numero = 0
 
-    let clicado = event.currentTarget
+    // FUNÇÃO PARA VERIFICAR A RESPOSTA
+    function verificarResposta(event) {
 
-    let caixaCD = clicado.parentElement
+        let clicado = event.currentTarget
 
-    let fundoQuiz = caixaCD.parentElement
+        let fundoQuiz = clicado.closest("." + Styles.fundo)
 
-    let caixaAB = fundoQuiz.children[2]
-    
-    let C = caixaAB.children[0]
-    let D = caixaAB.children[1]
+        let alternativas = fundoQuiz.querySelectorAll(
+            "." + Styles.alternativas
+        )
 
-    let A = caixaCD.children[0]
-    let B = caixaCD.children[1]
+        let respostaSelecionada = Number(clicado.dataset.resposta)
 
-    A.classList.toggle(Styles.certo)
-    B.classList.toggle(Styles.errado)
-    C.classList.toggle(Styles.errado)
-    D.classList.toggle(Styles.errado)
-
-     alternativas = fundoQuiz.querySelectorAll("." + Styles.alternativas)
+        if (numero === 0) return
 
         alternativas.forEach((alternativa) => {
-        alternativa.style.pointerEvents = "none"
-    })
-    
 
-}
+            let numeroAlternativa = Number(alternativa.dataset.resposta)
 
-function respostaBaixo1(event){
+            alternativa.classList.remove(Styles.certo)
+            alternativa.classList.remove(Styles.errado)
 
-    let clicado = event.currentTarget
+            if (numeroAlternativa === numero) {
+                alternativa.classList.add(Styles.certo)
+            }
+            else {
+                alternativa.classList.add(Styles.errado)
+            }
 
-    let caixaCD = clicado.parentElement
-    let fundoQuiz = caixaCD.parentElement
+            alternativa.style.pointerEvents = "none"
 
-    let caixaAB = fundoQuiz.children[1]
+        })
 
-    let A = caixaAB.children[0]
-    let B = caixaAB.children[1]
+        console.log("Resposta selecionada:", respostaSelecionada)
+        console.log("Resposta correta:", numero)
 
-    let C = caixaCD.children[0]
-    let D = caixaCD.children[1]
-
-    A.classList.add(Styles.certo)
-    B.classList.add(Styles.errado)
-    C.classList.add(Styles.errado)
-    D.classList.add(Styles.errado)
-
-    alternativas = fundoQuiz.querySelectorAll("." + Styles.alternativas)
-
-        alternativas.forEach((alternativa) => {
-        alternativa.style.pointerEvents = "none"
-    })
-
-}
-
-function respostaCima2(event){
-
-    let clicado = event.currentTarget
-
-    let caixaCD = clicado.parentElement
-
-    let fundoQuiz = caixaCD.parentElement
-
-    let caixaAB = fundoQuiz.children[2]
-    
-    let C = caixaAB.children[0]
-    let D = caixaAB.children[1]
-
-    let A = caixaCD.children[0]
-    let B = caixaCD.children[1]
-
-    A.classList.toggle(Styles.errado)
-    B.classList.toggle(Styles.certo)
-    C.classList.toggle(Styles.errado)
-    D.classList.toggle(Styles.errado)
-
-    alternativas = fundoQuiz.querySelectorAll("." + Styles.alternativas)
-
-        alternativas.forEach((alternativa) => {
-        alternativa.style.pointerEvents = "none"
-    })
-}
-
-function respostaBaixo2(event){
-
-     let clicado = event.currentTarget
-
-    let caixaCD = clicado.parentElement
-    let fundoQuiz = caixaCD.parentElement
-
-    let caixaAB = fundoQuiz.children[1]
-
-    let A = caixaAB.children[0]
-    let B = caixaAB.children[1]
-
-    let C = caixaCD.children[0]
-    let D = caixaCD.children[1]
-
-    A.classList.add(Styles.errado)
-    B.classList.add(Styles.certo)
-    C.classList.add(Styles.errado)
-    D.classList.add(Styles.errado)
-
-    alternativas = fundoQuiz.querySelectorAll("." + Styles.alternativas)
-
-        alternativas.forEach((alternativa) => {
-        alternativa.style.pointerEvents = "none"
-    })
-}
-
-function respostaCima3(event){
-
-    let clicado = event.currentTarget
-
-    let caixaCD = clicado.parentElement
-
-    let fundoQuiz = caixaCD.parentElement
-
-    let caixaAB = fundoQuiz.children[2]
-    
-    let C = caixaAB.children[0]
-    let D = caixaAB.children[1]
-
-    let A = caixaCD.children[0]
-    let B = caixaCD.children[1]
-
-    A.classList.toggle(Styles.errado)
-    B.classList.toggle(Styles.errado)
-    C.classList.toggle(Styles.certo)
-    D.classList.toggle(Styles.errado)
-
-    alternativas = fundoQuiz.querySelectorAll("." + Styles.alternativas)
-
-        alternativas.forEach((alternativa) => {
-        alternativa.style.pointerEvents = "none"
-    })
-}
-
-function respostaBaixo3(event){
-
-     let clicado = event.currentTarget
-
-    let caixaCD = clicado.parentElement
-    let fundoQuiz = caixaCD.parentElement
-
-    let caixaAB = fundoQuiz.children[1]
-
-    let A = caixaAB.children[0]
-    let B = caixaAB.children[1]
-
-    let C = caixaCD.children[0]
-    let D = caixaCD.children[1]
-
-    A.classList.add(Styles.errado)
-    B.classList.add(Styles.errado)
-    C.classList.add(Styles.certo)
-    D.classList.add(Styles.errado)
-
-    alternativas = fundoQuiz.querySelectorAll("." + Styles.alternativas)
-
-        alternativas.forEach((alternativa) => {
-        alternativa.style.pointerEvents = "none"
-    })
-}
-
-function respostaCima4(event){
-
-    let clicado = event.currentTarget
-
-    let caixaCD = clicado.parentElement
-
-    let fundoQuiz = caixaCD.parentElement
-
-    let caixaAB = fundoQuiz.children[2]
-    
-    let C = caixaAB.children[0]
-    let D = caixaAB.children[1]
-
-    let A = caixaCD.children[0]
-    let B = caixaCD.children[1]
-
-    A.classList.toggle(Styles.errado)
-    B.classList.toggle(Styles.errado)
-    C.classList.toggle(Styles.errado)
-    D.classList.toggle(Styles.certo)
-
-    alternativas = fundoQuiz.querySelectorAll("." + Styles.alternativas)
-
-        alternativas.forEach((alternativa) => {
-        alternativa.style.pointerEvents = "none"
-    })
-}
-
-function respostaBaixo4(event){
-
-     let clicado = event.currentTarget
-
-    let caixaCD = clicado.parentElement
-    let fundoQuiz = caixaCD.parentElement
-
-    let caixaAB = fundoQuiz.children[1]
-
-    let A = caixaAB.children[0]
-    let B = caixaAB.children[1]
-
-    let C = caixaCD.children[0]
-    let D = caixaCD.children[1]
-
-    A.classList.add(Styles.errado)
-    B.classList.add(Styles.errado)
-    C.classList.add(Styles.errado)
-    D.classList.add(Styles.certo)
-
-    alternativas = fundoQuiz.querySelectorAll("." + Styles.alternativas)
-
-        alternativas.forEach((alternativa) => {
-        alternativa.style.pointerEvents = "none"
-    })
-}
-
-
-
-let numero = 0
-let funcaoCerto
-let funcaoErrado
-
-async function API(event){
-
-    let clicado = event.currentTarget
-
-    let divAtual = clicado.parentElement.parentElement
-
-    let fundoQuiz = divAtual.querySelector("." + Styles.fundo_quiz)
-
-    let alternativas = fundoQuiz.querySelectorAll("." + Styles.alternativas)
-
-    alternativas.forEach((alternativa) => {
-
-        alternativa.style.pointerEvents = "auto"
-
-        alternativa.classList.remove(Styles.certo)
-        alternativa.classList.remove(Styles.errado)
-
-    })
-
-    numero = Math.floor(Math.random() * 4) + 1
-
-    if(numero === 1){
-        funcaoCerto = respostaCima1
-        funcaoErrado = respostaBaixo1
-    }
-
-    else if(numero === 2){
-        funcaoCerto = respostaCima2
-        funcaoErrado = respostaBaixo2
-    }
-
-    else if(numero === 3){
-        funcaoCerto = respostaCima3
-        funcaoErrado = respostaBaixo3
+        if (respostaSelecionada === numero) {
+            console.log("Você acertou!")
+        }
+        else {
+            console.log("Você errou!")
+        }
 
     }
 
-    else if(numero === 4){
-        funcaoCerto = respostaCima4
-        funcaoErrado = respostaBaixo4
 
-    }
+    // FUNÇÃO PARA GERAR A QUESTÃO
+    async function API(event) {
 
-    console.log(numero)
-    let inputEnviar = document.querySelector("." + Styles.inputEnviar)
-    
-    let comando = document.querySelector("." + Styles.comando_texto)
-    let alternativa1 = document.querySelector("." + Styles.alternativa1)
-    let alternativa2 = document.querySelector("." + Styles.alternativa2)
-    let alternativa3 = document.querySelector("." + Styles.alternativa3)
-    let alternativa4 = document.querySelector("." + Styles.alternativa4)
+        let fundoQuiz = event.currentTarget.closest("." + Styles.fundo)
+
+        let inputEnviar = fundoQuiz.querySelector("." + Styles.inputEnviar)
+
+        let comando = fundoQuiz.querySelector("." + Styles.comando_texto)
+
+        let alternativa1 = fundoQuiz.querySelector("." + Styles.alternativa1)
+        let alternativa2 = fundoQuiz.querySelector("." + Styles.alternativa2)
+        let alternativa3 = fundoQuiz.querySelector("." + Styles.alternativa3)
+        let alternativa4 = fundoQuiz.querySelector("." + Styles.alternativa4)
+
+        let alternativas = fundoQuiz.querySelectorAll(
+            "." + Styles.alternativas
+        )
+
+        let conteudo = inputEnviar.value.trim()
+
+        if (!conteudo) {
+            alert("Digite um conteúdo para gerar a questão!")
+            return
+        }
+
+        let numeroSorteado = Math.floor(Math.random() * 4) + 1
 
         try {
 
-        const resposta = await fetch(
-    "http://localhost:3001/api/gerar-questao",
-    {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-            conteudo: inputEnviar.value,
-            numero: numero
-        })
-    }
-)
+            const resposta = await fetch(
+                "https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash-preview:generateContent",
+                {
+                    method: "POST",
 
-const objeto = await resposta.json()
+                    headers: {
+                        "Content-Type": "application/json",
 
-if (!resposta.ok) {
-    console.log("Erro:", objeto)
-    return
+                        "X-goog-api-key": "Coloque sua chave aqui!"
+                    },
+
+                    body: JSON.stringify({
+
+                        contents: [
+                            {
+                                parts: [
+                                    {
+                                        text: `Você é um gerador de questões educacionais para uma plataforma de estudos.
+
+Sua tarefa é receber um conteúdo ou tema informado pelo usuário e criar uma questão de múltipla escolha para testar o conhecimento sobre esse assunto.
+
+REGRAS PARA CRIAR A QUESTÃO:
+
+Crie uma pergunta objetiva e coerente com o conteúdo informado.
+
+Gere exatamente quatro alternativas.
+
+As alternativas devem ser identificadas pelas letras A, B, C e D.
+
+Somente uma alternativa pode estar correta.
+
+As três alternativas incorretas devem ser plausíveis, mas conter informações erradas.
+
+Evite alternativas muito óbvias ou absurdas.
+
+Não crie alternativas repetidas.
+
+Utilize uma linguagem clara e adequada ao nível do conteúdo apresentado.
+
+Não forneça explicações antes ou depois do JSON.
+
+DISTRIBUIÇÃO DA RESPOSTA CORRETA:
+
+O usuário informará um número entre 1 e 4, que representa a posição da alternativa correta:
+
+1 = Alternativa A correta.
+2 = Alternativa B correta.
+3 = Alternativa C correta.
+4 = Alternativa D correta.
+
+Respeite obrigatoriamente essa posição. Não altere a posição indicada.
+
+FORMATO DE RESPOSTA:
+
+Retorne exclusivamente um objeto JSON válido, seguindo exatamente esta estrutura:
+
+{
+    "comando": "Enunciado da questão",
+    "alternativa1": "Texto da alternativa A",
+    "alternativa2": "Texto da alternativa B",
+    "alternativa3": "Texto da alternativa C",
+    "alternativa4": "Texto da alternativa D"
 }
 
-comando.textContent = objeto.comando
-alternativa1.textContent = objeto.alternativa1
-alternativa2.textContent = objeto.alternativa2
-alternativa3.textContent = objeto.alternativa3
-alternativa4.textContent = objeto.alternativa4
+IMPORTANTE:
 
+Não utilize Markdown.
+Não coloque o JSON dentro de blocos de código.
+Não adicione comentários.
+Não adicione campos extras.
+Não coloque a resposta correta em nenhum campo adicional.
 
-    } catch (erro) {
+Garanta que a alternativa correta corresponda ao número solicitado.
 
-        console.log("Erro na requisição:", erro)
+CONTEÚDO DO USUÁRIO: ${conteudo}
+
+NÚMERO DA ALTERNATIVA CORRETA: ${numeroSorteado}`
+                                    }
+                                ]
+                            }
+                        ]
+
+                    })
+                }
+            )
+
+            const dados = await resposta.json()
+
+            if (!resposta.ok) {
+                console.log("Erro na API:", dados)
+                return
+            }
+
+            let texto = dados.candidates?.[0]?.content?.parts?.[0]?.text
+
+            if (!texto) {
+                console.log("A API não retornou uma questão válida:", dados)
+                return
+            }
+
+            // REMOVE POSSÍVEIS BLOCOS MARKDOWN
+            texto = texto.trim()
+                .replace(/^```(?:json)?\s*/i, "")
+                .replace(/\s*```$/, "")
+
+            let objeto = JSON.parse(texto)
+
+            // VERIFICA SE TODOS OS CAMPOS EXISTEM
+            if (
+                !objeto.comando ||
+                !objeto.alternativa1 ||
+                !objeto.alternativa2 ||
+                !objeto.alternativa3 ||
+                !objeto.alternativa4
+            ) {
+                console.log("JSON incompleto:", objeto)
+                return
+            }
+
+            // ATUALIZA A QUESTÃO
+            comando.textContent = objeto.comando
+
+            alternativa1.textContent = objeto.alternativa1
+            alternativa2.textContent = objeto.alternativa2
+            alternativa3.textContent = objeto.alternativa3
+            alternativa4.textContent = objeto.alternativa4
+
+            // ATUALIZA O NÚMERO DA RESPOSTA CORRETA
+            numero = numeroSorteado
+
+            // REINICIA AS ALTERNATIVAS
+            alternativas.forEach((alternativa) => {
+
+                alternativa.classList.remove(Styles.certo)
+                alternativa.classList.remove(Styles.errado)
+
+                alternativa.style.pointerEvents = "auto"
+
+            })
+
+            console.log("Número sorteado:", numero)
+            console.log("Questão gerada:", objeto)
+
+        }
+
+        catch (erro) {
+
+            console.log("Erro na requisição:", erro)
+
+        }
 
     }
-}
 
-function Quiz(){
-    return(
+
+    return (
+
         <div className={Styles.fundo}>
+
             <div className={Styles.fundo_quiz}>
+
                 <div className={Styles.comando}>
                     <p className={Styles.comando_texto}></p>
                 </div>
+
+
                 <div className={Styles.ajuste_alternativas}>
-                    <div className={Styles.alternativas} onClick={(event) => funcaoCerto(event)}>             
+
+                    <div
+                        className={Styles.alternativas}
+                        data-resposta="1"
+                        onClick={verificarResposta}
+                    >
                         <div className={Styles.ajuste_texto}>
+
                             <div className={Styles.quadrado}>
                                 A
                             </div>
-                            <p className={Styles.alternativa1}>
-                                
-                            </p>
+
+                            <p className={Styles.alternativa1}></p>
+
                         </div>
                     </div>
-                    <div className={Styles.alternativas} onClick={(event) => funcaoCerto(event)}>
+
+
+                    <div
+                        className={Styles.alternativas}
+                        data-resposta="2"
+                        onClick={verificarResposta}
+                    >
                         <div className={Styles.ajuste_texto}>
+
                             <div className={Styles.quadrado}>
                                 B
                             </div>
-                            <p className={Styles.alternativa2}>
-                                
-                            </p>
+
+                            <p className={Styles.alternativa2}></p>
+
                         </div>
                     </div>
+
                 </div>
+
+
                 <div className={Styles.ajuste_alternativas}>
-                    <div className={Styles.alternativas} onClick={(event) => funcaoErrado(event)}>
+
+                    <div
+                        className={Styles.alternativas}
+                        data-resposta="3"
+                        onClick={verificarResposta}
+                    >
                         <div className={Styles.ajuste_texto}>
+
                             <div className={Styles.quadrado}>
-                                𝗖
+                                C
                             </div>
-                            <p className={Styles.alternativa3}>
-                                
-                            </p>
+
+                            <p className={Styles.alternativa3}></p>
+
                         </div>
                     </div>
-                    <div className={Styles.alternativas} onClick={(event) => funcaoErrado(event)}>
+
+
+                    <div
+                        className={Styles.alternativas}
+                        data-resposta="4"
+                        onClick={verificarResposta}
+                    >
                         <div className={Styles.ajuste_texto}>
+
                             <div className={Styles.quadrado}>
                                 D
                             </div>
-                            <p className={Styles.alternativa4}>
-                                
-                            </p>
+
+                            <p className={Styles.alternativa4}></p>
+
                         </div>
                     </div>
-                </div>    
+
+                </div>
+
             </div>
+
+
             <div>
-                <input className={Styles.inputEnviar} type="text"  />
-                <button onClick={API}>enviar</button>
+
+                <input
+                    className={Styles.inputEnviar}
+                    type="text"
+                />
+
+                <button onClick={API}>
+                    enviar
+                </button>
+
             </div>
+
         </div>
-        
+
     )
+
 }
 
 export default Quiz
