@@ -244,98 +244,88 @@ function inserir_modulo() {
                 }
 
 
-                if (nome === "Imagem" || nome === "Vídeo" || nome === "PDF") {
+                if (nome === "Imagem" || nome === "Vídeo" || nome === "PDF" || nome === "Slides") {
+    let input_arquivo = document.createElement("input");
+    input_arquivo.type = "file";
 
-                    let input_arquivo = document.createElement("input")
-
-                    input_arquivo.type = "file"
-
-
-                    if (nome === "Imagem") {
-                        input_arquivo.accept = "image/*"
-                    }
-
-                    if (nome === "Vídeo") {
-                        input_arquivo.accept = "video/*"
-                    }
-
-                    if (nome === "PDF") {
-                        input_arquivo.accept = ".pdf,application/pdf"
-                    }
+    if (nome === "Imagem") input_arquivo.accept = "image/*";
+    if (nome === "Vídeo") input_arquivo.accept = "video/*";
+    if (nome === "PDF") input_arquivo.accept = ".pdf,application/pdf";
+    if (nome === "Slides") input_arquivo.accept = ".pptx,application/vnd.openxmlformats-officedocument.presentationml.presentation";
 
 
-                    input_arquivo.addEventListener("change", function() {
+                    // Dentro de modulo.jsx, substitua o input_arquivo.addEventListener("change", ...) por:
+input_arquivo.addEventListener("change", async function() {
+    let arquivo = input_arquivo.files[0];
+    if (!arquivo) return;
 
-                        let arquivo = input_arquivo.files[0]
+    let url = URL.createObjectURL(arquivo);
 
-                        if (!arquivo) return
+    let caixa_arquivo = document.createElement("div");
+    area_edicao.appendChild(caixa_arquivo);
+    caixa_arquivo.classList.add(Styles.caixa_arquivo);
 
-                        let url = URL.createObjectURL(arquivo)
+    let botao_excluir = document.createElement("button");
+    caixa_arquivo.appendChild(botao_excluir);
+    botao_excluir.classList.add(Styles.botao_excluir_texto);
 
+    let imagem_excluir = document.createElement("img");
+    imagem_excluir.src = Exclude;
+    imagem_excluir.alt = "Excluir arquivo";
+    botao_excluir.appendChild(imagem_excluir);
 
-                        let caixa_arquivo = document.createElement("div")
-                        area_edicao.appendChild(caixa_arquivo)
+    botao_excluir.addEventListener("click", function() {
+        caixa_arquivo.remove();
+        URL.revokeObjectURL(url);
+    });
 
-                        caixa_arquivo.classList.add(Styles.caixa_arquivo)
+    if (nome === "Imagem") {
+        let imagem = document.createElement("img");
+        imagem.src = url;
+        imagem.alt = arquivo.name;
+        caixa_arquivo.appendChild(imagem);
+    }
 
+    if (nome === "Vídeo") {
+        let video = document.createElement("video");
+        video.src = url;
+        video.controls = true;
+        caixa_arquivo.appendChild(video);
+    }
 
-                        let botao_excluir = document.createElement("button")
-                        caixa_arquivo.appendChild(botao_excluir)
+    if (nome === "PDF") {
+        let pdf = document.createElement("iframe");
+        pdf.src = url;
+        pdf.title = arquivo.name;
+        caixa_arquivo.appendChild(pdf);
+    }
 
-                        botao_excluir.classList.add(Styles.botao_excluir_texto)
+    // --- CONEXÃO COM O SEU BACKEND NODE (PORTA 3000) ---
+    if (nome === "Vídeo" || nome === "PDF" || nome === "Slides") {
+        let aviso = document.createElement("p");
+        aviso.textContent = "⏳ Processando IA (Gerando Resumo, Slides, PDF e Áudio)...";
+        caixa_arquivo.appendChild(aviso);
 
+        try {
+            const resposta = await fetch("http://localhost:3000", {
+                method: "POST",
+                headers: {
+                    "x-nome-arquivo": encodeURIComponent(arquivo.name)
+                },
+                body: arquivo
+            });
 
-                        let imagem_excluir = document.createElement("img")
-                        imagem_excluir.src = Exclude
-                        imagem_excluir.alt = "Excluir arquivo"
-
-                        botao_excluir.appendChild(imagem_excluir)
-
-
-                        botao_excluir.addEventListener("click", function() {
-
-                            caixa_arquivo.remove()
-                            URL.revokeObjectURL(url)
-
-                        })
-
-
-                        if (nome === "Imagem") {
-
-                            let imagem = document.createElement("img")
-
-                            imagem.src = url
-                            imagem.alt = arquivo.name
-
-                            caixa_arquivo.appendChild(imagem)
-
-                        }
-
-
-                        if (nome === "Vídeo") {
-
-                            let video = document.createElement("video")
-
-                            video.src = url
-                            video.controls = true
-
-                            caixa_arquivo.appendChild(video)
-
-                        }
-
-
-                        if (nome === "PDF") {
-
-                            let pdf = document.createElement("iframe")
-
-                            pdf.src = url
-                            pdf.title = arquivo.name
-
-                            caixa_arquivo.appendChild(pdf)
-
-                        }
-
-                    })
+            if (resposta.ok) {
+                aviso.textContent = "✅ Material processado e disponível para os colaboradores!";
+            } else {
+                aviso.textContent = "❌ Erro ao processar material no servidor.";
+            }
+        } catch (erro) {
+            console.error("Erro no envio:", erro);
+            aviso.textContent = "❌ Servidor Node (porta 3000) desligado ou inacessível.";
+        }
+    }
+});
 
 
                     input_arquivo.click()
@@ -369,10 +359,11 @@ function inserir_modulo() {
         }
 
 
-        criar_botao_elemento("Texto", barras)
-        criar_botao_elemento("Vídeo", seta_youtube)
-        criar_botao_elemento("PDF", documento)
-        criar_botao_elemento("Imagem", foto)
+        criar_botao_elemento("Texto", barras);
+        criar_botao_elemento("Vídeo", seta_youtube);
+        criar_botao_elemento("PDF", documento);
+        criar_botao_elemento("Slides", documento);
+        criar_botao_elemento("Imagem", foto);
 
 
         let botao_editar_topico = document.createElement("button")
