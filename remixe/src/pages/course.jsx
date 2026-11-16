@@ -69,16 +69,16 @@ function Course() {
                             Original
                         </button>
                         <button type="button" data-mode="organizacao" className={Style.chip} onClick={mudarConteudo}>
-                            Organização (Slides)
+                            Organização 
                         </button>
                         <button type="button" data-mode="revisao" className={Style.chip} onClick={mudarConteudo}>
-                            Revisão (Resumo & Áudio)
+                            Revisão 
                         </button>
                         <button type="button" data-mode="documentacao" className={Style.chip} onClick={mudarConteudo}>
-                            Documentação (Texto/PDF)
+                            Documentação 
                         </button>
                         <button type="button" data-mode="fixacao" className={Style.chip} onClick={mudarConteudo}>
-                            Fixação (Quiz)
+                            Fixação 
                         </button>
                     </div>
 
@@ -132,7 +132,7 @@ function Course() {
                             </div>
                         )}
                     </div>
-                    
+
                     {/* 2. CONTEÚDO ORGANIZAÇÃO (SLIDES PPTX) */}
                     <div data-panel="organizacao" hidden>
                         <h1 className={Style.lessonTitle}>Apresentação de Slides Gerada</h1>
